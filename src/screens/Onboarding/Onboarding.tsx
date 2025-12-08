@@ -49,6 +49,12 @@ const Onboarding: React.FC = () => {
     setLoading(true);
 
     try {
+      if (!user?.sub) {
+        setError("User ID missing. Please try logging in again.");
+        setLoading(false);
+        return;
+      }
+
       const response = await fetch("/api/complete-onboarding", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
