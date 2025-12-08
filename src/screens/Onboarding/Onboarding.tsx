@@ -36,6 +36,11 @@ const Onboarding: React.FC = () => {
     e.preventDefault();
     setError(null);
 
+    if (!user?.sub) {
+      setError("Not logged in");
+      return;
+    }
+
     if (!firstName.trim() || !lastName.trim() || !country.trim()) {
       setError("Please fill in your first name, last name, and country.");
       return;
@@ -44,11 +49,11 @@ const Onboarding: React.FC = () => {
     setLoading(true);
 
     try {
-      const res = await fetch("/api/update-profile", {
+      const response = await fetch("/api/complete-onboarding", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          userId: user.sub, // Auth0 user id
+          userId: user.sub, // 👈 IMPORTANT: Auth0 user id
           firstName: firstName.trim(),
           lastName: lastName.trim(),
           location: country.trim(), // API expects "location" but form uses "country"
@@ -56,16 +61,18 @@ const Onboarding: React.FC = () => {
         }),
       });
 
-      if (!res.ok) {
-        const data = await res.json().catch(() => ({}));
-        throw new Error(data.error || "Failed to save profile");
+      if (!response.ok) {
+        const errorText = await response.text();
+        setError("Onboarding failed: " + errorText);
+        setLoading(false);
+        return;
       }
 
-      // All good – send them to the main app page
+      // ✅ If everything worked, send them "home"
       window.location.href = "/";
     } catch (err: any) {
-      setError(err.message || "Something went wrong");
-    } finally {
+      console.error(err);
+      setError("Unexpected error. Please try again.");
       setLoading(false);
     }
   };
