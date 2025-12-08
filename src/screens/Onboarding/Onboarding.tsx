@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useAuth0 } from "@auth0/auth0-react";
 
 const countries = [
   "United Kingdom",
@@ -13,32 +13,61 @@ const countries = [
 ];
 
 const Onboarding: React.FC = () => {
-  const navigate = useNavigate();
+  const { user, isAuthenticated } = useAuth0();
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [country, setCountry] = useState("");
   const [phone, setPhone] = useState("");
-  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  if (!isAuthenticated || !user) {
+    return (
+      <div className="min-h-screen bg-[#070a0d] text-white flex items-center justify-center">
+        <div className="text-center">
+          <p className="text-lg mb-4">Please log in to continue.</p>
+          <p className="text-sm text-neutral-400">Redirecting to login...</p>
+        </div>
+      </div>
+    );
+  }
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setError(null);
+
     if (!firstName.trim() || !lastName.trim() || !country.trim()) {
       setError("Please fill in your first name, last name, and country.");
       return;
     }
 
-    setError("");
-    const payload = {
-      firstName: firstName.trim(),
-      lastName: lastName.trim(),
-      country: country.trim(),
-      phone: phone.trim() || null,
-      role: "guest",
-    };
+    setLoading(true);
 
-    // TODO: replace this with a call to our backend / Auth0 metadata later.
-    console.log("Onboarding data:", payload);
-    navigate("/");
+    try {
+      const res = await fetch("/api/update-profile", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          userId: user.sub, // Auth0 user id
+          firstName: firstName.trim(),
+          lastName: lastName.trim(),
+          location: country.trim(), // API expects "location" but form uses "country"
+          phone: phone.trim() || null,
+        }),
+      });
+
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error(data.error || "Failed to save profile");
+      }
+
+      // All good – send them to the main app page
+      window.location.href = "/";
+    } catch (err: any) {
+      setError(err.message || "Something went wrong");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -127,9 +156,10 @@ const Onboarding: React.FC = () => {
 
             <button
               type="submit"
-              className="mt-4 w-full rounded-xl bg-[#f2bfa7] text-black text-sm font-semibold py-2.5 shadow-lg shadow-black/30 hover:bg-[#e5b298] transition"
+              disabled={loading}
+              className="mt-4 w-full rounded-xl bg-[#f2bfa7] text-black text-sm font-semibold py-2.5 shadow-lg shadow-black/30 hover:bg-[#e5b298] transition disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              Continue
+              {loading ? "Saving…" : "Continue"}
             </button>
 
             <p className="mt-3 text-[11px] text-neutral-400">
