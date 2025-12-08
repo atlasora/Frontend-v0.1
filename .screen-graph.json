@@ -1,4 +1,548 @@
 {
-  "nodes": [],
-  "edges": []
+  "nodes": [
+    {
+      "id": "src/components/LandingPage.tsx",
+      "label": "LandingPage",
+      "routes": [
+        "/"
+      ],
+      "dataModelId": "517:949",
+      "isRoot": true
+    },
+    {
+      "id": "src/screens/Dashboard/Dashboard.tsx",
+      "label": "Dashboard",
+      "routes": [
+        "/dashboard"
+      ],
+      "dataModelId": "3:2"
+    },
+    {
+      "id": "src/screens/Listings/Listings.tsx",
+      "label": "Listings",
+      "routes": [
+        "/listings"
+      ],
+      "dataModelId": "63:290"
+    },
+    {
+      "id": "src/screens/Messages/Messages.tsx",
+      "label": "Messages",
+      "routes": [
+        "/messages"
+      ],
+      "dataModelId": "62:2"
+    },
+    {
+      "id": "src/screens/Reservation/Reservation.tsx",
+      "label": "Reservation",
+      "routes": [
+        "/reservations"
+      ],
+      "dataModelId": "63:426"
+    },
+    {
+      "id": "src/screens/Property00001/Property000001.tsx",
+      "label": "Property000001",
+      "routes": [
+        "/property/000001"
+      ]
+    },
+    {
+      "id": "src/screens/city/BarcelonaExplore.tsx",
+      "label": "BarcelonaExplore",
+      "routes": [
+        "/city/barcelona"
+      ]
+    },
+    {
+      "id": "src/screens/Onboarding/Onboarding.tsx",
+      "label": "Onboarding",
+      "routes": [
+        "/onboarding"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "id": "src\\components\\AccountSidebar.tsx:44:12-to-src\\screens\\Dashboard\\Dashboard.tsx",
+      "source": "src\\components\\LandingPage.tsx",
+      "target": "src\\screens\\Dashboard\\Dashboard.tsx",
+      "data": {
+        "viaRoute": "/dashboard",
+        "trigger": {
+          "element": "<Link\r\n              to=\"/dashboard\"\r\n              onClick={onClose}\r\n              className=\"flex justify-between items-center hover:text-[#FFA25B] transition text-white\"\r\n            >\r\n              Dashboard <span>›</span>\r\n            </Link>",
+          "line": 44,
+          "endLine": 50,
+          "column": 12,
+          "endColumn": 19,
+          "sourceFile": "src\\components\\AccountSidebar.tsx"
+        }
+      }
+    },
+    {
+      "id": "src\\components\\AccountSidebar.tsx:51:12-to-src\\screens\\Listings\\Listings.tsx",
+      "source": "src\\components\\LandingPage.tsx",
+      "target": "src\\screens\\Listings\\Listings.tsx",
+      "data": {
+        "viaRoute": "/listings",
+        "trigger": {
+          "element": "<Link\r\n              to=\"/listings\"\r\n              onClick={onClose}\r\n              className=\"flex justify-between items-center hover:text-[#FFA25B] transition text-white\"\r\n            >\r\n              Listings <span>›</span>\r\n            </Link>",
+          "line": 51,
+          "endLine": 57,
+          "column": 12,
+          "endColumn": 19,
+          "sourceFile": "src\\components\\AccountSidebar.tsx"
+        }
+      }
+    },
+    {
+      "id": "src\\components\\AccountSidebar.tsx:58:12-to-src\\screens\\Messages\\Messages.tsx",
+      "source": "src\\components\\LandingPage.tsx",
+      "target": "src\\screens\\Messages\\Messages.tsx",
+      "data": {
+        "viaRoute": "/messages",
+        "trigger": {
+          "element": "<Link\r\n              to=\"/messages\"\r\n              onClick={onClose}\r\n              className=\"flex justify-between items-center hover:text-[#FFA25B] transition text-white\"\r\n            >\r\n              Messages <span>›</span>\r\n            </Link>",
+          "line": 58,
+          "endLine": 64,
+          "column": 12,
+          "endColumn": 19,
+          "sourceFile": "src\\components\\AccountSidebar.tsx"
+        }
+      }
+    },
+    {
+      "id": "src\\components\\AccountSidebar.tsx:65:12-to-src\\screens\\Reservation\\Reservation.tsx",
+      "source": "src\\components\\LandingPage.tsx",
+      "target": "src\\screens\\Reservation\\Reservation.tsx",
+      "data": {
+        "viaRoute": "/reservations",
+        "trigger": {
+          "element": "<Link\r\n              to=\"/reservations\"\r\n              onClick={onClose}\r\n              className=\"flex justify-between items-center hover:text-[#FFA25B] transition text-white\"\r\n            >\r\n              Reservations <span>›</span>\r\n            </Link>",
+          "line": 65,
+          "endLine": 71,
+          "column": 12,
+          "endColumn": 19,
+          "sourceFile": "src\\components\\AccountSidebar.tsx"
+        }
+      }
+    },
+    {
+      "id": "src\\screens\\Home\\sections\\FeaturedListingsSection\\FeaturedListingsSection.tsx:88:14-to-src\\screens\\Property00001\\Property000001.tsx",
+      "source": "src\\components\\LandingPage.tsx",
+      "target": "src\\screens\\Property00001\\Property000001.tsx",
+      "data": {
+        "viaRoute": "/property/000001",
+        "trigger": {
+          "element": "<a key={listing.id} href=\"/property/000001\" className=\"block\">\n                {cardContent}\n              </a>",
+          "line": 88,
+          "endLine": 90,
+          "column": 14,
+          "endColumn": 18,
+          "sourceFile": "src\\screens\\Home\\sections\\FeaturedListingsSection\\FeaturedListingsSection.tsx"
+        }
+      }
+    },
+    {
+      "id": "src\\components\\AccountSidebar.tsx:44:12-to-src\\screens\\Dashboard\\Dashboard.tsx",
+      "source": "src\\components\\LandingPage.tsx",
+      "target": "src\\screens\\Dashboard\\Dashboard.tsx",
+      "data": {
+        "viaRoute": "/dashboard",
+        "trigger": {
+          "element": "<Link\r\n              to=\"/dashboard\"\r\n              onClick={onClose}\r\n              className=\"flex justify-between items-center hover:text-[#FFA25B] transition text-white\"\r\n            >\r\n              Dashboard <span>›</span>\r\n            </Link>",
+          "line": 44,
+          "endLine": 50,
+          "column": 12,
+          "endColumn": 19,
+          "sourceFile": "src\\components\\AccountSidebar.tsx"
+        }
+      }
+    },
+    {
+      "id": "src\\components\\AccountSidebar.tsx:51:12-to-src\\screens\\Listings\\Listings.tsx",
+      "source": "src\\components\\LandingPage.tsx",
+      "target": "src\\screens\\Listings\\Listings.tsx",
+      "data": {
+        "viaRoute": "/listings",
+        "trigger": {
+          "element": "<Link\r\n              to=\"/listings\"\r\n              onClick={onClose}\r\n              className=\"flex justify-between items-center hover:text-[#FFA25B] transition text-white\"\r\n            >\r\n              Listings <span>›</span>\r\n            </Link>",
+          "line": 51,
+          "endLine": 57,
+          "column": 12,
+          "endColumn": 19,
+          "sourceFile": "src\\components\\AccountSidebar.tsx"
+        }
+      }
+    },
+    {
+      "id": "src\\components\\AccountSidebar.tsx:58:12-to-src\\screens\\Messages\\Messages.tsx",
+      "source": "src\\components\\LandingPage.tsx",
+      "target": "src\\screens\\Messages\\Messages.tsx",
+      "data": {
+        "viaRoute": "/messages",
+        "trigger": {
+          "element": "<Link\r\n              to=\"/messages\"\r\n              onClick={onClose}\r\n              className=\"flex justify-between items-center hover:text-[#FFA25B] transition text-white\"\r\n            >\r\n              Messages <span>›</span>\r\n            </Link>",
+          "line": 58,
+          "endLine": 64,
+          "column": 12,
+          "endColumn": 19,
+          "sourceFile": "src\\components\\AccountSidebar.tsx"
+        }
+      }
+    },
+    {
+      "id": "src\\components\\AccountSidebar.tsx:65:12-to-src\\screens\\Reservation\\Reservation.tsx",
+      "source": "src\\components\\LandingPage.tsx",
+      "target": "src\\screens\\Reservation\\Reservation.tsx",
+      "data": {
+        "viaRoute": "/reservations",
+        "trigger": {
+          "element": "<Link\r\n              to=\"/reservations\"\r\n              onClick={onClose}\r\n              className=\"flex justify-between items-center hover:text-[#FFA25B] transition text-white\"\r\n            >\r\n              Reservations <span>›</span>\r\n            </Link>",
+          "line": 65,
+          "endLine": 71,
+          "column": 12,
+          "endColumn": 19,
+          "sourceFile": "src\\components\\AccountSidebar.tsx"
+        }
+      }
+    },
+    {
+      "id": "src\\components\\AccountSidebar.tsx:44:12-to-src\\screens\\Dashboard\\Dashboard.tsx",
+      "source": "src\\components\\LandingPage.tsx",
+      "target": "src\\screens\\Dashboard\\Dashboard.tsx",
+      "data": {
+        "viaRoute": "/dashboard",
+        "trigger": {
+          "element": "<Link\r\n              to=\"/dashboard\"\r\n              onClick={onClose}\r\n              className=\"flex justify-between items-center hover:text-[#FFA25B] transition text-white\"\r\n            >\r\n              Dashboard <span>›</span>\r\n            </Link>",
+          "line": 44,
+          "endLine": 50,
+          "column": 12,
+          "endColumn": 19,
+          "sourceFile": "src\\components\\AccountSidebar.tsx"
+        }
+      }
+    },
+    {
+      "id": "src\\components\\AccountSidebar.tsx:51:12-to-src\\screens\\Listings\\Listings.tsx",
+      "source": "src\\components\\LandingPage.tsx",
+      "target": "src\\screens\\Listings\\Listings.tsx",
+      "data": {
+        "viaRoute": "/listings",
+        "trigger": {
+          "element": "<Link\r\n              to=\"/listings\"\r\n              onClick={onClose}\r\n              className=\"flex justify-between items-center hover:text-[#FFA25B] transition text-white\"\r\n            >\r\n              Listings <span>›</span>\r\n            </Link>",
+          "line": 51,
+          "endLine": 57,
+          "column": 12,
+          "endColumn": 19,
+          "sourceFile": "src\\components\\AccountSidebar.tsx"
+        }
+      }
+    },
+    {
+      "id": "src\\components\\AccountSidebar.tsx:58:12-to-src\\screens\\Messages\\Messages.tsx",
+      "source": "src\\components\\LandingPage.tsx",
+      "target": "src\\screens\\Messages\\Messages.tsx",
+      "data": {
+        "viaRoute": "/messages",
+        "trigger": {
+          "element": "<Link\r\n              to=\"/messages\"\r\n              onClick={onClose}\r\n              className=\"flex justify-between items-center hover:text-[#FFA25B] transition text-white\"\r\n            >\r\n              Messages <span>›</span>\r\n            </Link>",
+          "line": 58,
+          "endLine": 64,
+          "column": 12,
+          "endColumn": 19,
+          "sourceFile": "src\\components\\AccountSidebar.tsx"
+        }
+      }
+    },
+    {
+      "id": "src\\components\\AccountSidebar.tsx:65:12-to-src\\screens\\Reservation\\Reservation.tsx",
+      "source": "src\\components\\LandingPage.tsx",
+      "target": "src\\screens\\Reservation\\Reservation.tsx",
+      "data": {
+        "viaRoute": "/reservations",
+        "trigger": {
+          "element": "<Link\r\n              to=\"/reservations\"\r\n              onClick={onClose}\r\n              className=\"flex justify-between items-center hover:text-[#FFA25B] transition text-white\"\r\n            >\r\n              Reservations <span>›</span>\r\n            </Link>",
+          "line": 65,
+          "endLine": 71,
+          "column": 12,
+          "endColumn": 19,
+          "sourceFile": "src\\components\\AccountSidebar.tsx"
+        }
+      }
+    },
+    {
+      "id": "src\\components\\AccountSidebar.tsx:44:12-to-src\\screens\\Dashboard\\Dashboard.tsx",
+      "source": "src\\components\\LandingPage.tsx",
+      "target": "src\\screens\\Dashboard\\Dashboard.tsx",
+      "data": {
+        "viaRoute": "/dashboard",
+        "trigger": {
+          "element": "<Link\r\n              to=\"/dashboard\"\r\n              onClick={onClose}\r\n              className=\"flex justify-between items-center hover:text-[#FFA25B] transition text-white\"\r\n            >\r\n              Dashboard <span>›</span>\r\n            </Link>",
+          "line": 44,
+          "endLine": 50,
+          "column": 12,
+          "endColumn": 19,
+          "sourceFile": "src\\components\\AccountSidebar.tsx"
+        }
+      }
+    },
+    {
+      "id": "src\\components\\AccountSidebar.tsx:51:12-to-src\\screens\\Listings\\Listings.tsx",
+      "source": "src\\components\\LandingPage.tsx",
+      "target": "src\\screens\\Listings\\Listings.tsx",
+      "data": {
+        "viaRoute": "/listings",
+        "trigger": {
+          "element": "<Link\r\n              to=\"/listings\"\r\n              onClick={onClose}\r\n              className=\"flex justify-between items-center hover:text-[#FFA25B] transition text-white\"\r\n            >\r\n              Listings <span>›</span>\r\n            </Link>",
+          "line": 51,
+          "endLine": 57,
+          "column": 12,
+          "endColumn": 19,
+          "sourceFile": "src\\components\\AccountSidebar.tsx"
+        }
+      }
+    },
+    {
+      "id": "src\\components\\AccountSidebar.tsx:58:12-to-src\\screens\\Messages\\Messages.tsx",
+      "source": "src\\components\\LandingPage.tsx",
+      "target": "src\\screens\\Messages\\Messages.tsx",
+      "data": {
+        "viaRoute": "/messages",
+        "trigger": {
+          "element": "<Link\r\n              to=\"/messages\"\r\n              onClick={onClose}\r\n              className=\"flex justify-between items-center hover:text-[#FFA25B] transition text-white\"\r\n            >\r\n              Messages <span>›</span>\r\n            </Link>",
+          "line": 58,
+          "endLine": 64,
+          "column": 12,
+          "endColumn": 19,
+          "sourceFile": "src\\components\\AccountSidebar.tsx"
+        }
+      }
+    },
+    {
+      "id": "src\\components\\AccountSidebar.tsx:65:12-to-src\\screens\\Reservation\\Reservation.tsx",
+      "source": "src\\components\\LandingPage.tsx",
+      "target": "src\\screens\\Reservation\\Reservation.tsx",
+      "data": {
+        "viaRoute": "/reservations",
+        "trigger": {
+          "element": "<Link\r\n              to=\"/reservations\"\r\n              onClick={onClose}\r\n              className=\"flex justify-between items-center hover:text-[#FFA25B] transition text-white\"\r\n            >\r\n              Reservations <span>›</span>\r\n            </Link>",
+          "line": 65,
+          "endLine": 71,
+          "column": 12,
+          "endColumn": 19,
+          "sourceFile": "src\\components\\AccountSidebar.tsx"
+        }
+      }
+    },
+    {
+      "id": "src\\components\\AccountSidebar.tsx:44:12-to-src\\screens\\Dashboard\\Dashboard.tsx",
+      "source": "src\\components\\LandingPage.tsx",
+      "target": "src\\screens\\Dashboard\\Dashboard.tsx",
+      "data": {
+        "viaRoute": "/dashboard",
+        "trigger": {
+          "element": "<Link\r\n              to=\"/dashboard\"\r\n              onClick={onClose}\r\n              className=\"flex justify-between items-center hover:text-[#FFA25B] transition text-white\"\r\n            >\r\n              Dashboard <span>›</span>\r\n            </Link>",
+          "line": 44,
+          "endLine": 50,
+          "column": 12,
+          "endColumn": 19,
+          "sourceFile": "src\\components\\AccountSidebar.tsx"
+        }
+      }
+    },
+    {
+      "id": "src\\components\\AccountSidebar.tsx:51:12-to-src\\screens\\Listings\\Listings.tsx",
+      "source": "src\\components\\LandingPage.tsx",
+      "target": "src\\screens\\Listings\\Listings.tsx",
+      "data": {
+        "viaRoute": "/listings",
+        "trigger": {
+          "element": "<Link\r\n              to=\"/listings\"\r\n              onClick={onClose}\r\n              className=\"flex justify-between items-center hover:text-[#FFA25B] transition text-white\"\r\n            >\r\n              Listings <span>›</span>\r\n            </Link>",
+          "line": 51,
+          "endLine": 57,
+          "column": 12,
+          "endColumn": 19,
+          "sourceFile": "src\\components\\AccountSidebar.tsx"
+        }
+      }
+    },
+    {
+      "id": "src\\components\\AccountSidebar.tsx:58:12-to-src\\screens\\Messages\\Messages.tsx",
+      "source": "src\\components\\LandingPage.tsx",
+      "target": "src\\screens\\Messages\\Messages.tsx",
+      "data": {
+        "viaRoute": "/messages",
+        "trigger": {
+          "element": "<Link\r\n              to=\"/messages\"\r\n              onClick={onClose}\r\n              className=\"flex justify-between items-center hover:text-[#FFA25B] transition text-white\"\r\n            >\r\n              Messages <span>›</span>\r\n            </Link>",
+          "line": 58,
+          "endLine": 64,
+          "column": 12,
+          "endColumn": 19,
+          "sourceFile": "src\\components\\AccountSidebar.tsx"
+        }
+      }
+    },
+    {
+      "id": "src\\components\\AccountSidebar.tsx:65:12-to-src\\screens\\Reservation\\Reservation.tsx",
+      "source": "src\\components\\LandingPage.tsx",
+      "target": "src\\screens\\Reservation\\Reservation.tsx",
+      "data": {
+        "viaRoute": "/reservations",
+        "trigger": {
+          "element": "<Link\r\n              to=\"/reservations\"\r\n              onClick={onClose}\r\n              className=\"flex justify-between items-center hover:text-[#FFA25B] transition text-white\"\r\n            >\r\n              Reservations <span>›</span>\r\n            </Link>",
+          "line": 65,
+          "endLine": 71,
+          "column": 12,
+          "endColumn": 19,
+          "sourceFile": "src\\components\\AccountSidebar.tsx"
+        }
+      }
+    },
+    {
+      "id": "src\\components\\AccountSidebar.tsx:44:12-to-src\\screens\\Dashboard\\Dashboard.tsx",
+      "source": "src\\components\\LandingPage.tsx",
+      "target": "src\\screens\\Dashboard\\Dashboard.tsx",
+      "data": {
+        "viaRoute": "/dashboard",
+        "trigger": {
+          "element": "<Link\r\n              to=\"/dashboard\"\r\n              onClick={onClose}\r\n              className=\"flex justify-between items-center hover:text-[#FFA25B] transition text-white\"\r\n            >\r\n              Dashboard <span>›</span>\r\n            </Link>",
+          "line": 44,
+          "endLine": 50,
+          "column": 12,
+          "endColumn": 19,
+          "sourceFile": "src\\components\\AccountSidebar.tsx"
+        }
+      }
+    },
+    {
+      "id": "src\\components\\AccountSidebar.tsx:51:12-to-src\\screens\\Listings\\Listings.tsx",
+      "source": "src\\components\\LandingPage.tsx",
+      "target": "src\\screens\\Listings\\Listings.tsx",
+      "data": {
+        "viaRoute": "/listings",
+        "trigger": {
+          "element": "<Link\r\n              to=\"/listings\"\r\n              onClick={onClose}\r\n              className=\"flex justify-between items-center hover:text-[#FFA25B] transition text-white\"\r\n            >\r\n              Listings <span>›</span>\r\n            </Link>",
+          "line": 51,
+          "endLine": 57,
+          "column": 12,
+          "endColumn": 19,
+          "sourceFile": "src\\components\\AccountSidebar.tsx"
+        }
+      }
+    },
+    {
+      "id": "src\\components\\AccountSidebar.tsx:58:12-to-src\\screens\\Messages\\Messages.tsx",
+      "source": "src\\components\\LandingPage.tsx",
+      "target": "src\\screens\\Messages\\Messages.tsx",
+      "data": {
+        "viaRoute": "/messages",
+        "trigger": {
+          "element": "<Link\r\n              to=\"/messages\"\r\n              onClick={onClose}\r\n              className=\"flex justify-between items-center hover:text-[#FFA25B] transition text-white\"\r\n            >\r\n              Messages <span>›</span>\r\n            </Link>",
+          "line": 58,
+          "endLine": 64,
+          "column": 12,
+          "endColumn": 19,
+          "sourceFile": "src\\components\\AccountSidebar.tsx"
+        }
+      }
+    },
+    {
+      "id": "src\\components\\AccountSidebar.tsx:65:12-to-src\\screens\\Reservation\\Reservation.tsx",
+      "source": "src\\components\\LandingPage.tsx",
+      "target": "src\\screens\\Reservation\\Reservation.tsx",
+      "data": {
+        "viaRoute": "/reservations",
+        "trigger": {
+          "element": "<Link\r\n              to=\"/reservations\"\r\n              onClick={onClose}\r\n              className=\"flex justify-between items-center hover:text-[#FFA25B] transition text-white\"\r\n            >\r\n              Reservations <span>›</span>\r\n            </Link>",
+          "line": 65,
+          "endLine": 71,
+          "column": 12,
+          "endColumn": 19,
+          "sourceFile": "src\\components\\AccountSidebar.tsx"
+        }
+      }
+    },
+    {
+      "id": "src\\components\\AccountSidebar.tsx:44:12-to-src\\screens\\Dashboard\\Dashboard.tsx",
+      "source": "src\\components\\LandingPage.tsx",
+      "target": "src\\screens\\Dashboard\\Dashboard.tsx",
+      "data": {
+        "viaRoute": "/dashboard",
+        "trigger": {
+          "element": "<Link\r\n              to=\"/dashboard\"\r\n              onClick={onClose}\r\n              className=\"flex justify-between items-center hover:text-[#FFA25B] transition text-white\"\r\n            >\r\n              Dashboard <span>›</span>\r\n            </Link>",
+          "line": 44,
+          "endLine": 50,
+          "column": 12,
+          "endColumn": 19,
+          "sourceFile": "src\\components\\AccountSidebar.tsx"
+        }
+      }
+    },
+    {
+      "id": "src\\components\\AccountSidebar.tsx:51:12-to-src\\screens\\Listings\\Listings.tsx",
+      "source": "src\\components\\LandingPage.tsx",
+      "target": "src\\screens\\Listings\\Listings.tsx",
+      "data": {
+        "viaRoute": "/listings",
+        "trigger": {
+          "element": "<Link\r\n              to=\"/listings\"\r\n              onClick={onClose}\r\n              className=\"flex justify-between items-center hover:text-[#FFA25B] transition text-white\"\r\n            >\r\n              Listings <span>›</span>\r\n            </Link>",
+          "line": 51,
+          "endLine": 57,
+          "column": 12,
+          "endColumn": 19,
+          "sourceFile": "src\\components\\AccountSidebar.tsx"
+        }
+      }
+    },
+    {
+      "id": "src\\components\\AccountSidebar.tsx:58:12-to-src\\screens\\Messages\\Messages.tsx",
+      "source": "src\\components\\LandingPage.tsx",
+      "target": "src\\screens\\Messages\\Messages.tsx",
+      "data": {
+        "viaRoute": "/messages",
+        "trigger": {
+          "element": "<Link\r\n              to=\"/messages\"\r\n              onClick={onClose}\r\n              className=\"flex justify-between items-center hover:text-[#FFA25B] transition text-white\"\r\n            >\r\n              Messages <span>›</span>\r\n            </Link>",
+          "line": 58,
+          "endLine": 64,
+          "column": 12,
+          "endColumn": 19,
+          "sourceFile": "src\\components\\AccountSidebar.tsx"
+        }
+      }
+    },
+    {
+      "id": "src\\components\\AccountSidebar.tsx:65:12-to-src\\screens\\Reservation\\Reservation.tsx",
+      "source": "src\\components\\LandingPage.tsx",
+      "target": "src\\screens\\Reservation\\Reservation.tsx",
+      "data": {
+        "viaRoute": "/reservations",
+        "trigger": {
+          "element": "<Link\r\n              to=\"/reservations\"\r\n              onClick={onClose}\r\n              className=\"flex justify-between items-center hover:text-[#FFA25B] transition text-white\"\r\n            >\r\n              Reservations <span>›</span>\r\n            </Link>",
+          "line": 65,
+          "endLine": 71,
+          "column": 12,
+          "endColumn": 19,
+          "sourceFile": "src\\components\\AccountSidebar.tsx"
+        }
+      }
+    },
+    {
+      "id": "src\\screens\\Onboarding\\Onboarding.tsx:41:4-to-src\\components\\LandingPage.tsx",
+      "source": "src\\screens\\Onboarding\\Onboarding.tsx",
+      "target": "src\\components\\LandingPage.tsx",
+      "data": {
+        "viaRoute": "/",
+        "trigger": {
+          "element": "navigate(\"/\")",
+          "line": 41,
+          "endLine": 41,
+          "column": 4,
+          "endColumn": 17,
+          "sourceFile": "src\\screens\\Onboarding\\Onboarding.tsx"
+        }
+      }
+    }
+  ]
 }
