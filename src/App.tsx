@@ -7,15 +7,15 @@ import Reservation from "./screens/Reservation";
 import Property000001 from "./screens/Property00001/Property000001";
 import BarcelonaExplore from "./screens/city/BarcelonaExplore";
 import Onboarding from "./screens/Onboarding/Onboarding";
-import HostStart from "./screens/Host/HostStart";
-import HostPlaceType from "./screens/Host/HostPlaceType";
-import HostLocation from "./screens/Host/HostLocation";
-import HostBasics from "./screens/Host/HostBasics";
-import HostAmenities from "./screens/Host/HostAmenities";
-import HostPhotos from "./screens/Host/HostPhotos";
-import HostDetails from "./screens/Host/HostDetails";
-import HostPricing from "./screens/Host/HostPricing";
-import HostReview from "./screens/Host/HostReview";
+import HostStart from "./screens/host/HostStart";
+import HostPlaceType from "./screens/host/HostPlaceType";
+import HostLocation from "./screens/host/HostLocation";
+import HostBasics from "./screens/host/HostBasics";
+import HostAmenities from "./screens/host/HostAmenities";
+import HostPhotos from "./screens/host/HostPhotos";
+import HostDetails from "./screens/host/HostDetails";
+import HostPricing from "./screens/host/HostPricing";
+import HostReview from "./screens/host/HostReview";
 
 export const App = () => {
   return (
