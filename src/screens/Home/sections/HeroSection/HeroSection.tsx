@@ -116,7 +116,7 @@ export const HeroSection = (): JSX.Element => {
 
             <div className="mt-[118px] flex flex-col gap-4 translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:600ms]">
               <Button
-                onClick={() => navigate("/host/overview")}
+                onClick={() => navigate("/host")}
                 className="
                   w-[352px]
                   px-10 py-4 rounded-full text-black font-semibold 

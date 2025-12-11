@@ -7,7 +7,6 @@ import Reservation from "./screens/Reservation";
 import Property000001 from "./screens/Property00001/Property000001";
 import BarcelonaExplore from "./screens/city/BarcelonaExplore";
 import Onboarding from "./screens/Onboarding/Onboarding";
-import HostOverview from "./screens/host/HostOverview";
 import HostStart from "./screens/host/HostStart";
 import HostPlaceType from "./screens/host/HostPlaceType";
 import HostLocation from "./screens/host/HostLocation";
@@ -35,8 +34,7 @@ export const App = () => {
         <Route path="/city/barcelona" element={<BarcelonaExplore />} />
         <Route path="/onboarding" element={<Onboarding />} />
         {/* Host listing flow */}
-        <Route path="/host/overview" element={<HostOverview />} />
-        <Route path="/host/start" element={<HostStart />} />
+        <Route path="/host" element={<HostStart />} />
         <Route path="/host/place-type" element={<HostPlaceType />} />
         <Route path="/host/location" element={<HostLocation />} />
         <Route path="/host/basics" element={<HostBasics />} />
