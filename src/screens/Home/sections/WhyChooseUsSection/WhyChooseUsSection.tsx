@@ -1,25 +1,20 @@
 import React from "react";
-import { Coins, Zap, ShieldCheck, Star } from "lucide-react";
 
 export const WhyChooseUsSection = (): JSX.Element => {
   const features = [
     {
-      icon: Coins,
       title: "Keep 99.3% — Just 0.7% Fees",
       description: "Stop losing 15–20% to platforms. You keep almost everything you earn.",
     },
     {
-      icon: Zap,
       title: "Advance Payments on Your Bookings",
       description: "Instant access to cashflow the moment a guest books. No more waiting until check-in.",
     },
     {
-      icon: ShieldCheck,
       title: "No Platform Overrides or Surprise Cancellations",
       description: "Your rules, your cancellations, your income protected. The platform never steps in to overrule you.",
     },
     {
-      icon: Star,
       title: "Safer Stays With Guest Reputation Filtering",
       description: "Low-rating guests are filtered out automatically. Every stay starts with trust.",
     },
@@ -47,15 +42,18 @@ export const WhyChooseUsSection = (): JSX.Element => {
         <div className="w-full lg:w-1/2">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-px rounded-3xl overflow-hidden bg-white/5">
             {features.map((feature, index) => {
-              const Icon = feature.icon;
               return (
                 <div
                   key={feature.title}
                   className="bg-[#05070B] px-8 py-10 flex flex-col gap-4"
                 >
-                  <div className="flex items-center gap-3">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5">
-                      <Icon className="h-5 w-5 text-[#fac237]" />
+                  <div className="flex items-start gap-3">
+                    <div className="flex h-24 w-24 items-center justify-center rounded-full border border-white/10 bg-white/5 flex-shrink-0">
+                      <img 
+                        src="/images/logo.png" 
+                        alt="AtlasOra" 
+                        className="w-24 h-24 object-contain opacity-90"
+                      />
                     </div>
                     <h3 className="text-lg font-semibold text-slate-50">
                       {feature.title}

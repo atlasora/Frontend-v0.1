@@ -1,5 +1,4 @@
 // React import kept only for types (JSX.Element), even though not used at runtime.
-import { CallToActionSection } from "../screens/Home/sections/CallToActionSection";
 import { FeaturedListingsSection } from "../screens/Home/sections/FeaturedListingsSection";
 import { FooterSection } from "../screens/Home/sections/FooterSection";
 import { HeroSection } from "../screens/Home/sections/HeroSection";
@@ -24,7 +23,6 @@ export const PublicHome = (): JSX.Element => {
       <TestimonialSection />
       <RealHostsSection />
       <StatisticsSection />
-      <CallToActionSection />
       <FooterSection />
     </main>
   );

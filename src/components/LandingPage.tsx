@@ -1,5 +1,4 @@
 // React import kept only for types (JSX.Element), even though not used at runtime.
-import { CallToActionSection } from "../screens/Home/sections/CallToActionSection";
 import { AtlasOraVsAirbnbCalculator } from "./AtlasOraVsAirbnbCalculator";
 import AdvanceCalculator from "@/components/AdvanceCalculator";
 import { FeaturedListingsSection } from "../screens/Home/sections/FeaturedListingsSection";
@@ -35,7 +34,6 @@ export const LandingPage = (): JSX.Element => {
       <TestimonialSection />
       <RealHostsSection />
       <StatisticsSection />
-      <CallToActionSection />
       <FooterSection />
     </main>
   );

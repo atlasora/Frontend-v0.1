@@ -92,34 +92,36 @@ export const AtlasOraVsAirbnbCalculator: React.FC = () => {
   const positive = extraPerYear >= 0;
 
   return (
-    <section className="w-full max-w-4xl mx-auto rounded-3xl bg-[#05070b] border border-white/10 p-6 md:p-8 text-white shadow-xl shadow-black/40">
-      <header className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-6">
-        <div>
-          <h2 className="text-2xl md:text-3xl font-semibold">
-            See what you’d earn on AtlasOra vs Airbnb
-          </h2>
-          <p className="text-sm text-neutral-300 mt-1">
-            Adjust the sliders and inputs to match your place. We’ll compare
-            your payouts after platform fees.
-          </p>
-        </div>
-        <label className="flex items-center gap-3 cursor-pointer">
-          <input
-            type="checkbox"
-            className="h-4 w-4 rounded border-neutral-600 bg-neutral-900"
-            checked={promoEnabled}
-            onChange={(e) => setPromoEnabled(e.target.checked)}
-          />
-          <div className="flex flex-col">
-            <span className="text-sm font-semibold">
-              0% AtlasOra host fee for first 6 months
-            </span>
-            <span className="text-xs text-neutral-400">
-              Uncheck to compare AtlasOra’s standard host fee ({atlasOraFeePct}%).
-            </span>
-          </div>
-        </label>
-      </header>
+    <section className="w-full max-w-4xl mx-auto">
+      <div className="mb-6">
+        <h2 className="bg-gradient-to-r from-[#ffb28a] via-[#ffcf99] to-[#ffd9b3] bg-clip-text text-transparent text-4xl font-bold md:text-5xl text-center w-full mx-auto">
+          See what you'd earn on AtlasOra vs Airbnb
+        </h2>
+        <p className="text-sm text-neutral-300 mt-1 text-center mx-auto">
+          Adjust the sliders and inputs to match your place. We'll compare
+          your payouts after platform fees.
+        </p>
+      </div>
+
+      <div className="rounded-3xl bg-[#05070b] border border-white/10 p-6 md:p-8 text-white shadow-xl shadow-black/40">
+        <header className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-6">
+          <label className="flex items-center gap-3 cursor-pointer">
+            <input
+              type="checkbox"
+              className="h-4 w-4 rounded border-neutral-600 bg-neutral-900"
+              checked={promoEnabled}
+              onChange={(e) => setPromoEnabled(e.target.checked)}
+            />
+            <div className="flex flex-col">
+              <span className="text-sm font-semibold">
+                0% AtlasOra host fee for first 6 months
+              </span>
+              <span className="text-xs text-neutral-400">
+                Uncheck to compare AtlasOra's standard host fee ({atlasOraFeePct}%).
+              </span>
+            </div>
+          </label>
+        </header>
 
       {/* Inputs */}
       <div className="grid md:grid-cols-3 gap-4 mb-6">
@@ -267,7 +269,7 @@ export const AtlasOraVsAirbnbCalculator: React.FC = () => {
       {/* Savings banner */}
       <div className="mt-4 rounded-2xl bg-gradient-to-r from-[#f2bfa7]/20 to-[#f2bfa7]/10 border border-[#f2bfa7]/40 px-4 py-3 flex flex-col md:flex-row md:items-center md:justify-between gap-2">
         <p className="text-sm text-neutral-100">
-          On these numbers, listing with{" "}
+          Listing with{" "}
           <span className="font-semibold text-[#f2bfa7]">AtlasOra</span>{" "}
           instead of Airbnb would change your income by:
         </p>
@@ -285,6 +287,7 @@ export const AtlasOraVsAirbnbCalculator: React.FC = () => {
             year in your pocket.
           </p>
         </div>
+      </div>
       </div>
     </section>
   );

@@ -1,7 +1,9 @@
 import React, { useEffect, useMemo, useState } from "react";
 
 const MAX_BOOKINGS = 10;
-const FEE_PER_1000_PER_30_DAYS = 50;
+const BASE_PER_1000 = 1000;
+const FEE_PER_1000_PER_30_DAYS = 50; // $50 per $1,000 per 30 days
+const FEE_RATE_PER_PERIOD = FEE_PER_1000_PER_30_DAYS / BASE_PER_1000; // 0.05 (5%)
 
 const AdvanceCalculator: React.FC = () => {
   const [bookings, setBookings] = useState<string[]>(
@@ -19,8 +21,14 @@ const AdvanceCalculator: React.FC = () => {
     [bookings]
   );
 
+  // Compute totals and eligibility
+  const totalBookings = useMemo(
+    () => numericBookings.reduce((sum, v) => sum + v, 0),
+    [numericBookings]
+  );
+
   // Compute maximum eligible advance based on rule: floor(n/2) lowest bookings
-  const maxAdvance = useMemo(() => {
+  const eligibleAdvanceLimit = useMemo(() => {
     if (numericBookings.length < 2) return 0;
 
     const sorted = [...numericBookings].sort((a, b) => a - b);
@@ -30,20 +38,27 @@ const AdvanceCalculator: React.FC = () => {
     return sorted.slice(0, eligibleSlots).reduce((sum, v) => sum + v, 0);
   }, [numericBookings]);
 
+  const periods = Math.max(1, Math.ceil(days / 30));
+
+  const maxAdvanceByTotalBookings =
+    totalBookings > 0
+      ? totalBookings / (1 + FEE_RATE_PER_PERIOD * periods)
+      : 0;
+
+  const maxAdvanceAmount = Math.max(
+    0,
+    Math.min(eligibleAdvanceLimit, maxAdvanceByTotalBookings)
+  );
+
   // Keep slider in sync with max
   useEffect(() => {
-    if (maxAdvance === 0) {
-      setSelectedAdvance(0);
-    } else if (selectedAdvance === 0 || selectedAdvance > maxAdvance) {
-      setSelectedAdvance(maxAdvance);
-    }
-  }, [maxAdvance]);
+    setSelectedAdvance((prev) => Math.min(prev, maxAdvanceAmount));
+  }, [maxAdvanceAmount]);
 
   // Fee & repayment
-  const periods = Math.max(0, Math.ceil(days / 30));
   const fee =
     selectedAdvance > 0
-      ? (selectedAdvance / 1000) * FEE_PER_1000_PER_30_DAYS * periods
+      ? selectedAdvance * FEE_RATE_PER_PERIOD * periods
       : 0;
   const totalRepay = selectedAdvance + fee;
 
@@ -62,14 +77,14 @@ const AdvanceCalculator: React.FC = () => {
 
   return (
     <section className="w-full max-w-6xl mx-auto mt-16 px-4 lg:px-0">
+      <h2 className="bg-gradient-to-r from-[#ffb28a] via-[#ffcf99] to-[#ffd9b3] bg-clip-text text-transparent text-4xl md:text-5xl font-bold text-center w-full mx-auto mt-20 mb-8">
+        How much can you advance?
+      </h2>
       <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)] gap-10 items-start rounded-xl bg-[#111] border border-white/10 shadow-xl p-10">
         {/* Left: inputs for bookings */}
         <div className="space-y-6 md:w-1/2">
-          <h2 className="text-3xl sm:text-4xl font-semibold text-white">
-            How much can you advance?
-          </h2>
           <p className="mt-2 text-sm md:text-base text-slate-300 max-w-xl">
-            Add up to 10 upcoming bookings. We’ll estimate how much you can
+            Add up to 10 upcoming bookings. We'll estimate how much you can
             advance today based on your lowest confirmed stays.
           </p>
 
@@ -106,8 +121,8 @@ const AdvanceCalculator: React.FC = () => {
               Eligible advance limit
             </p>
             <p className="text-2xl sm:text-3xl font-semibold text-[#FBC9A4] mt-1">
-              {maxAdvance > 0 ? (
-                <>€{maxAdvance.toLocaleString(undefined, { maximumFractionDigits: 0 })}</>
+              {eligibleAdvanceLimit > 0 ? (
+                <>€{eligibleAdvanceLimit.toLocaleString(undefined, { maximumFractionDigits: 0 })}</>
               ) : (
                 "Not eligible yet"
               )}
@@ -130,16 +145,21 @@ const AdvanceCalculator: React.FC = () => {
             <input
               type="range"
               min={0}
-              max={maxAdvance}
+              max={maxAdvanceAmount}
               step={10}
               value={selectedAdvance}
-              disabled={maxAdvance === 0}
+              disabled={maxAdvanceAmount === 0}
               onChange={(e) => setSelectedAdvance(Number(e.target.value))}
               className="w-full mt-2 h-2 rounded-full bg-[#2A1F1A] accent-[#FBC9A4]"
             />
-            {maxAdvance === 0 && (
+            {maxAdvanceAmount === 0 && (
               <p className="text-xs text-slate-300 mt-1">
                 Add at least 2 bookings to see your advance options.
+              </p>
+            )}
+            {maxAdvanceAmount < eligibleAdvanceLimit && maxAdvanceAmount > 0 && (
+              <p className="text-xs text-slate-300 mt-1">
+                Capped so that total repayment never exceeds your booking value.
               </p>
             )}
           </div>
