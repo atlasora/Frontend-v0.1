@@ -121,10 +121,10 @@ export const TestimonialsSection = (): JSX.Element => {
         </p>
 
         <Link to="/host/start">
-          <Button className="w-[203px] mt-[34px] bg-app-secondary hover:bg-app-secondary/90 h-12 gap-2 px-4 py-2 rounded-lg transition-colors translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:400ms]">
-            <span className="font-buttons font-[number:var(--buttons-font-weight)] text-backgrounddark-text text-[length:var(--buttons-font-size)] tracking-[var(--buttons-letter-spacing)] leading-[var(--buttons-line-height)] [font-style:var(--buttons-font-style)]">
-              List your property
-            </span>
+        <Button className="w-[203px] mt-[34px] bg-app-secondary hover:bg-app-secondary/90 h-12 gap-2 px-4 py-2 rounded-lg transition-colors translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:400ms]">
+          <span className="font-buttons font-[number:var(--buttons-font-weight)] text-backgrounddark-text text-[length:var(--buttons-font-size)] tracking-[var(--buttons-letter-spacing)] leading-[var(--buttons-line-height)] [font-style:var(--buttons-font-style)]">
+            List your property
+          </span>
           <img
             className="w-2.5 h-[10.62px]"
             alt="Arrow"

@@ -1,16 +1,28 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import HostLayout from "../../components/host/HostLayout";
 
 const HostReview: React.FC = () => {
   const navigate = useNavigate();
+  const [highlightTags, setHighlightTags] = useState<string[]>([]);
+
+  useEffect(() => {
+    try {
+      const stored = sessionStorage.getItem("hostHighlightTags");
+      if (stored) {
+        setHighlightTags(JSON.parse(stored));
+      }
+    } catch {
+      setHighlightTags([]);
+    }
+  }, []);
 
   return (
     <HostLayout
       title="Preview your listing"
       description="This is roughly how guests will see your place on AO."
-      step={9}
-      totalSteps={9}
+      step={12}
+      totalSteps={13}
     >
       <div className="grid gap-6 md:grid-cols-[1.2fr,1fr] max-w-4xl">
         <div className="rounded-2xl border border-white/10 bg-black/30 p-4">
@@ -31,12 +43,29 @@ const HostReview: React.FC = () => {
             When you're happy, we'll let hosts publish instantly or save drafts
             while they verify identity and payouts.
           </p>
+          {highlightTags.length > 0 && (
+            <div className="pt-2">
+              <p className="text-xs uppercase tracking-[0.16em] text-neutral-500 mb-2">
+                Highlighted aspects
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {highlightTags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs text-neutral-100"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
           <div className="pt-4 flex flex-col gap-3">
             <button
-              onClick={() => navigate("/")}
+              onClick={() => navigate("/host/verify")}
               className="rounded-xl bg-[#f2bfa7] px-5 py-2.5 text-sm font-semibold text-black hover:bg-[#e3b49c] transition"
             >
-              Finish & return home
+              Continue
             </button>
             <button
               onClick={() => navigate("/host/start")}

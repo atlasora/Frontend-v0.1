@@ -1,9 +1,10 @@
 // React import kept only for types (JSX.Element), even though not used at runtime.
 import { CallToActionSection } from "../screens/Home/sections/CallToActionSection";
+import { AtlasOraVsAirbnbCalculator } from "./AtlasOraVsAirbnbCalculator";
 import { FeaturedListingsSection } from "../screens/Home/sections/FeaturedListingsSection";
 import { FooterSection } from "../screens/Home/sections/FooterSection";
 import { HeroSection } from "../screens/Home/sections/HeroSection";
-import { HostRewardSection } from "../screens/Home/sections/HostRewardSection";
+// import { HostRewardSection } from "../screens/Home/sections/HostRewardSection";
 import { NotJustAnotherHeading } from "../screens/Home/sections/NotJustAnotherHeading";
 import { RealHostsSection } from "../screens/Home/sections/RealHostsSection";
 import { StatisticsSection } from "../screens/Home/sections/StatisticsSection";
@@ -17,10 +18,14 @@ export const LandingPage = (): JSX.Element => {
       data-model-id="517:949"
     >
       <HeroSection />
+      <section className="w-full px-6 mt-16">
+        <div className="max-w-6xl mx-auto">
+          <AtlasOraVsAirbnbCalculator />
+        </div>
+      </section>
       <FeaturedListingsSection />
       <NotJustAnotherHeading />
       <WhyChooseUsSection />
-      <HostRewardSection />
       <TestimonialSection />
       <RealHostsSection />
       <StatisticsSection />

@@ -9,13 +9,13 @@ const HostLocation: React.FC = () => {
     <HostLayout
       title="Where is your place?"
       description="We only show the full address to confirmed guests. Everyone else just sees an approximate location."
-      step={3}
-      totalSteps={9}
+      step={4}
+      totalSteps={13}
     >
       <div className="grid gap-6 md:grid-cols-[1.2fr,1fr] max-w-3xl">
         <div className="space-y-3">
           <div className="space-y-2">
-            <label className="text-xs text-neutral-300">Country / region</label>
+            <label className="text-xs text-neutral-300">Country</label>
             <input
               className="w-full rounded-xl border border-white/15 bg-[#05070b] px-3 py-2 text-sm outline-none focus:border-[#f2bfa7] focus:ring-1 focus:ring-[#f2bfa7]/60"
               placeholder="Spain"
@@ -27,6 +27,7 @@ const HostLocation: React.FC = () => {
               className="w-full rounded-xl border border-white/15 bg-[#05070b] px-3 py-2 text-sm outline-none focus:border-[#f2bfa7] focus:ring-1 focus:ring-[#f2bfa7]/60"
               placeholder="Street, building, door"
             />
+            {/* TODO: replace with Google Places autocomplete and capture lat/lng */}
           </div>
           <div className="grid grid-cols-2 gap-3">
             <div className="space-y-2">
@@ -37,7 +38,7 @@ const HostLocation: React.FC = () => {
               />
             </div>
             <div className="space-y-2">
-              <label className="text-xs text-neutral-300">Postcode</label>
+              <label className="text-xs text-neutral-300">Postcode / ZIP</label>
               <input
                 className="w-full rounded-xl border border-white/15 bg-[#05070b] px-3 py-2 text-sm outline-none focus:border-[#f2bfa7] focus:ring-1 focus:ring-[#f2bfa7]/60"
                 placeholder="08001"
@@ -53,6 +54,9 @@ const HostLocation: React.FC = () => {
           </p>
         </div>
       </div>
+      <p className="mt-4 text-xs text-neutral-400 max-w-3xl">
+        We only show the exact address to guests after they’ve confirmed a booking.
+      </p>
       <div className="flex items-center justify-between pt-6 border-t border-white/10 mt-8 max-w-3xl">
         <button
           onClick={() => navigate(-1)}

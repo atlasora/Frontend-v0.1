@@ -7,6 +7,7 @@ import Reservation from "./screens/Reservation";
 import Property000001 from "./screens/Property00001/Property000001";
 import BarcelonaExplore from "./screens/city/BarcelonaExplore";
 import Onboarding from "./screens/Onboarding/Onboarding";
+import HostOverview from "./screens/Host/HostOverview";
 import HostStart from "./screens/host/HostStart";
 import HostPlaceType from "./screens/host/HostPlaceType";
 import HostLocation from "./screens/host/HostLocation";
@@ -16,6 +17,10 @@ import HostPhotos from "./screens/host/HostPhotos";
 import HostDetails from "./screens/host/HostDetails";
 import HostPricing from "./screens/host/HostPricing";
 import HostReview from "./screens/host/HostReview";
+import HostSecurity from "./screens/host/HostSecurity";
+import HostHostDetails from "./screens/host/HostHostDetails";
+import HostConfirmation from "./screens/host/HostConfirmation";
+import HostVerification from "./screens/host/HostVerification";
 
 export const App = () => {
   return (
@@ -30,6 +35,7 @@ export const App = () => {
         <Route path="/city/barcelona" element={<BarcelonaExplore />} />
         <Route path="/onboarding" element={<Onboarding />} />
         {/* Host listing flow */}
+        <Route path="/host/overview" element={<HostOverview />} />
         <Route path="/host/start" element={<HostStart />} />
         <Route path="/host/place-type" element={<HostPlaceType />} />
         <Route path="/host/location" element={<HostLocation />} />
@@ -38,7 +44,11 @@ export const App = () => {
         <Route path="/host/photos" element={<HostPhotos />} />
         <Route path="/host/details" element={<HostDetails />} />
         <Route path="/host/pricing" element={<HostPricing />} />
+        <Route path="/host/security" element={<HostSecurity />} />
+        <Route path="/host/host-details" element={<HostHostDetails />} />
         <Route path="/host/review" element={<HostReview />} />
+        <Route path="/host/verify" element={<HostVerification />} />
+        <Route path="/host/confirm" element={<HostConfirmation />} />
       </Routes>
     </BrowserRouter>
   );

@@ -1,16 +1,42 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import HostLayout from "../../components/host/HostLayout";
 
 const HostDetails: React.FC = () => {
   const navigate = useNavigate();
+  const [highlightTags, setHighlightTags] = useState<string[]>([]);
+  const [tagMessage, setTagMessage] = useState<string | null>(null);
+
+  const aspectOptions = [
+    "Cozy",
+    "Family friendly",
+    "Quiet",
+    "City centre",
+    "Great for work",
+    "Spacious",
+    "Beach nearby",
+    "Scenic views",
+  ];
+
+  const toggleTag = (tag: string) => {
+    setTagMessage(null);
+    if (highlightTags.includes(tag)) {
+      setHighlightTags((prev) => prev.filter((t) => t !== tag));
+      return;
+    }
+    if (highlightTags.length >= 2) {
+      setTagMessage("You can choose up to 2.");
+      return;
+    }
+    setHighlightTags((prev) => [...prev, tag]);
+  };
 
   return (
     <HostLayout
       title="Write a short, clear description"
       description="Tell guests what makes your place work for real people — not influencers."
-      step={7}
-      totalSteps={9}
+      step={8}
+      totalSteps={13}
     >
       <div className="max-w-xl space-y-3">
         <div className="space-y-2">
@@ -20,6 +46,39 @@ const HostDetails: React.FC = () => {
             placeholder="Sunlit 2-bed near the sea"
           />
         </div>
+
+        {/* Highlight aspects */}
+        <div className="space-y-2">
+          <div className="flex items-center gap-2">
+            <p className="text-sm text-neutral-200">What best describes your place?</p>
+          </div>
+          <p className="text-xs text-neutral-400">
+            Choose up to 2 aspects – we’ll highlight these for guests.
+          </p>
+          <div className="flex flex-wrap gap-2 mt-2">
+            {aspectOptions.map((opt) => {
+              const selected = highlightTags.includes(opt);
+              return (
+                <button
+                  key={opt}
+                  type="button"
+                  onClick={() => toggleTag(opt)}
+                  className={`rounded-full border px-3 py-1.5 text-xs transition ${
+                    selected
+                      ? "border-[#f2bfa7] bg-white/10 text-white"
+                      : "border-white/15 bg-white/5 text-neutral-200 hover:border-[#f2bfa7] hover:bg-white/10"
+                  }`}
+                >
+                  {opt}
+                </button>
+              );
+            })}
+          </div>
+          {tagMessage && (
+            <p className="text-xs text-red-400">{tagMessage}</p>
+          )}
+        </div>
+
         <div className="space-y-2">
           <label className="text-xs text-neutral-300">Description</label>
           <textarea
@@ -36,7 +95,14 @@ const HostDetails: React.FC = () => {
             Back
           </button>
           <button
-            onClick={() => navigate("/host/pricing")}
+          onClick={() => {
+            // Persist highlight tags for the review step
+            sessionStorage.setItem(
+              "hostHighlightTags",
+              JSON.stringify(highlightTags)
+            );
+            navigate("/host/pricing");
+          }}
             className="rounded-xl bg-[#f2bfa7] px-5 py-2.5 text-sm font-semibold text-black hover:bg-[#e3b49c] transition"
           >
             Continue

@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
+import { Header } from "../Header";
+import { AccountSidebar } from "../AccountSidebar";
 
 interface HostLayoutProps {
   title: string;
@@ -16,9 +18,13 @@ const HostLayout: React.FC<HostLayoutProps> = ({
   children,
 }) => {
   const progress = (step / totalSteps) * 100;
+  const [isAccountOpen, setIsAccountOpen] = useState(false);
 
   return (
     <div className="min-h-screen bg-[#05070b] text-white flex flex-col">
+      {/* Global AO header */}
+      <Header onOpenSidebar={() => setIsAccountOpen(true)} />
+
       {/* Top bar */}
       <header className="border-b border-white/10">
         <div className="mx-auto w-full max-w-5xl px-4 py-4 flex items-center justify-between">
@@ -61,6 +67,11 @@ const HostLayout: React.FC<HostLayoutProps> = ({
           <div className="mt-8">{children}</div>
         </div>
       </main>
+
+      <AccountSidebar
+        isOpen={isAccountOpen}
+        onClose={() => setIsAccountOpen(false)}
+      />
     </div>
   );
 };

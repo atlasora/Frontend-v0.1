@@ -110,14 +110,13 @@ export const HeroSection = (): JSX.Element => {
                 Earn more from your place. Instant payouts upon check-in.
               </h1>
               <p className="mt-6 text-lg md:text-2xl font-light leading-relaxed text-white/90 max-w-3xl">
-                AtlasOra brings hosts, guests, and communities together on fairer terms. Earn more,
-                access your money sooner, and host with confidence. We grow together.
+                Launching in Spain in Q1 2026.
               </p>
             </div>
 
             <div className="mt-[118px] flex flex-col gap-4 translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:600ms]">
               <Button
-                onClick={() => navigate("/host/start")}
+                onClick={() => navigate("/host/overview")}
                 className="
                   w-[352px]
                   px-10 py-4 rounded-full text-black font-semibold 
@@ -131,6 +130,53 @@ export const HeroSection = (): JSX.Element => {
               <p className="w-[352px] text-[14px] text-white text-opacity-80 text-center leading-[20px] mt-1">
                 Takes 2 minutes · No setup fee · Cancel anytime.
               </p>
+
+              {/* Host benefits – premium AO logo version */}
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "flex-start",
+                  gap: "6rem",
+                  marginTop: "70px",
+                  marginBottom: "70px",
+                  color: "white",
+                  fontSize: "20px",
+                  fontWeight: 300,
+                  textAlign: "center",
+                  flexWrap: "wrap",
+                }}
+              >
+                {/* Benefit 1 */}
+                <div style={{ maxWidth: "260px" }}>
+                  <img
+                    src="/images/logo.png"
+                    alt="AtlasOra logo"
+                    className="mx-auto mb-3 h-16 w-auto"
+                  />
+                  <span>0% host fees for six months</span>
+                </div>
+
+                {/* Benefit 2 */}
+                <div style={{ maxWidth: "260px" }}>
+                  <img
+                    src="/images/logo.png"
+                    alt="AtlasOra logo"
+                    className="mx-auto mb-3 h-16 w-auto"
+                  />
+                  <span>Free premium listing for six months</span>
+                </div>
+
+                {/* Benefit 3 */}
+                <div style={{ maxWidth: "260px" }}>
+                  <img
+                    src="/images/logo.png"
+                    alt="AtlasOra logo"
+                    className="mx-auto mb-3 h-16 w-auto"
+                  />
+                  <span>Feature on our social media pages</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
