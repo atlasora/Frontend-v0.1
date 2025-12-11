@@ -7,7 +7,7 @@ import Reservation from "./screens/Reservation";
 import Property000001 from "./screens/Property00001/Property000001";
 import BarcelonaExplore from "./screens/city/BarcelonaExplore";
 import Onboarding from "./screens/Onboarding/Onboarding";
-import HostOverview from "./screens/Host/HostOverview";
+import HostOverview from "./screens/host/HostOverview";
 import HostStart from "./screens/host/HostStart";
 import HostPlaceType from "./screens/host/HostPlaceType";
 import HostLocation from "./screens/host/HostLocation";
