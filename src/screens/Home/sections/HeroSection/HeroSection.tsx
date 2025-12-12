@@ -75,6 +75,13 @@ export const HeroSection = (): JSX.Element => {
               <SearchBar locationLabel="Barcelona" onSubmit={handleSearchSubmit} />
             </div>
             <div className="flex items-center gap-4">
+              <button
+                type="button"
+                onClick={() => navigate("/help")}
+                className="hidden md:inline-flex items-center justify-center rounded-full px-5 py-2 text-sm font-medium text-black bg-gradient-to-r from-[#FF9F7A] via-[#FFBFA5] to-[#FFD9B5] shadow-md hover:opacity-90 transition"
+              >
+                FAQs
+              </button>
               {isAuthenticated ? (
                 <div className="flex items-center gap-3">
                   <button

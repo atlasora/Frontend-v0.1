@@ -1,0 +1,19 @@
+[
+  {
+    "id": 1,
+    "category": "General",
+    "subcategory": "Brand",
+    "audience": ["General"],
+    "question": "What is AtlasOra?",
+    "answer": ""
+  },
+  {
+    "id": 2,
+    "category": "General",
+    "subcategory": "Brand",
+    "audience": ["General"],
+    "question": "Who is behind AtlasOra?",
+    "answer": ""
+  }
+]
+

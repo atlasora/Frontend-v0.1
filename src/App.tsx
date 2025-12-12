@@ -20,6 +20,7 @@ import HostSecurity from "./screens/host/HostSecurity";
 import HostHostDetails from "./screens/host/HostHostDetails";
 import HostConfirmation from "./screens/host/HostConfirmation";
 import HostVerification from "./screens/host/HostVerification";
+import HelpPage from "./app/help/page";
 
 export const App = () => {
   return (
@@ -47,6 +48,7 @@ export const App = () => {
         <Route path="/host/review" element={<HostReview />} />
         <Route path="/host/verify" element={<HostVerification />} />
         <Route path="/host/confirm" element={<HostConfirmation />} />
+        <Route path="/help" element={<HelpPage />} />
       </Routes>
     </BrowserRouter>
   );

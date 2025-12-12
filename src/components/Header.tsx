@@ -1,6 +1,6 @@
 import React from "react";
 import { useAuth0 } from "@auth0/auth0-react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import SearchBar from "./SearchBar";
 
 type HeaderProps = {
@@ -28,6 +28,12 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSidebar }) => {
           <SearchBar onSubmit={handleSearchSubmit} />
         </div>
         <div className="flex items-center gap-4">
+          <Link
+            to="/help"
+            className="hidden md:inline-flex items-center justify-center rounded-full px-5 py-2 text-sm font-medium text-black bg-gradient-to-r from-[#FF9F7A] via-[#FFBFA5] to-[#FFD9B5] shadow-md hover:opacity-90 transition"
+          >
+            FAQs
+          </Link>
           {isAuthenticated ? (
             <div className="flex items-center gap-3">
               <button
