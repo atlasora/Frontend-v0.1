@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { LandingPage } from "./components/LandingPage";
 import Dashboard from "./screens/Dashboard";
 import Listings from "./screens/Listings";
@@ -21,6 +21,10 @@ import HostHostDetails from "./screens/host/HostHostDetails";
 import HostConfirmation from "./screens/host/HostConfirmation";
 import HostVerification from "./screens/host/HostVerification";
 import HelpPage from "./app/help/page";
+import Checkout from "./screens/Checkout/Checkout";
+import Payment from "./screens/Checkout/Payment";
+import BookingConfirmed from "./screens/Checkout/BookingConfirmed";
+import Login from "./screens/Auth/Login";
 
 export const App = () => {
   return (
@@ -32,6 +36,7 @@ export const App = () => {
         <Route path="/messages" element={<Messages />} />
         <Route path="/reservations" element={<Reservation />} />
         <Route path="/property/000001" element={<Property000001 />} />
+        <Route path="/property/:propertyId" element={<Property000001 />} />
         <Route path="/city/barcelona" element={<BarcelonaExplore />} />
         <Route path="/onboarding" element={<Onboarding />} />
         {/* Host listing flow */}
@@ -49,6 +54,11 @@ export const App = () => {
         <Route path="/host/verify" element={<HostVerification />} />
         <Route path="/host/confirm" element={<HostConfirmation />} />
         <Route path="/help" element={<HelpPage />} />
+        <Route path="/checkout/:propertyId" element={<Checkout />} />
+        <Route path="/checkout/:propertyId/payment" element={<Payment />} />
+        <Route path="/booking/confirmed" element={<BookingConfirmed />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="*" element={<Navigate to="/property/000001" replace />} />
       </Routes>
     </BrowserRouter>
   );

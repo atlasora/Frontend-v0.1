@@ -163,15 +163,31 @@
   ],
   "edges": [
     {
-      "id": "src\\screens\\Home\\sections\\HeroSection\\HeroSection.tsx:119:31-to-src\\screens\\host\\HostStart.tsx",
+      "id": "src\\screens\\Home\\sections\\HeroSection\\HeroSection.tsx:80:31-to-src\\app\\help\\page.tsx",
+      "source": "src\\components\\LandingPage.tsx",
+      "target": "src\\app\\help\\page.tsx",
+      "data": {
+        "viaRoute": "/help",
+        "trigger": {
+          "element": "navigate(\"/help\")",
+          "line": 80,
+          "endLine": 80,
+          "column": 31,
+          "endColumn": 48,
+          "sourceFile": "src\\screens\\Home\\sections\\HeroSection\\HeroSection.tsx"
+        }
+      }
+    },
+    {
+      "id": "src\\screens\\Home\\sections\\HeroSection\\HeroSection.tsx:126:31-to-src\\screens\\host\\HostStart.tsx",
       "source": "src\\components\\LandingPage.tsx",
       "target": "src\\screens\\host\\HostStart.tsx",
       "data": {
         "viaRoute": "/host",
         "trigger": {
           "element": "navigate(\"/host\")",
-          "line": 119,
-          "endLine": 119,
+          "line": 126,
+          "endLine": 126,
           "column": 31,
           "endColumn": 48,
           "sourceFile": "src\\screens\\Home\\sections\\HeroSection\\HeroSection.tsx"
@@ -281,7 +297,7 @@
       "data": {
         "viaRoute": "/help",
         "trigger": {
-          "element": "<Link\r\n            to=\"/help\"\r\n            className=\"rounded-xl border border-[#ffffff33] bg-transparent px-4 py-2 text-sm font-medium text-white hover:border-white\"\r\n          >\r\n            FAQ\r\n          </Link>",
+          "element": "<Link\r\n            to=\"/help\"\r\n            className=\"hidden md:inline-flex items-center justify-center rounded-full px-5 py-2 text-sm font-medium text-black bg-gradient-to-r from-[#FF9F7A] via-[#FFBFA5] to-[#FFD9B5] shadow-md hover:opacity-90 transition\"\r\n          >\r\n            FAQs\r\n          </Link>",
           "line": 31,
           "endLine": 36,
           "column": 10,
@@ -361,7 +377,7 @@
       "data": {
         "viaRoute": "/help",
         "trigger": {
-          "element": "<Link\r\n            to=\"/help\"\r\n            className=\"rounded-xl border border-[#ffffff33] bg-transparent px-4 py-2 text-sm font-medium text-white hover:border-white\"\r\n          >\r\n            FAQ\r\n          </Link>",
+          "element": "<Link\r\n            to=\"/help\"\r\n            className=\"hidden md:inline-flex items-center justify-center rounded-full px-5 py-2 text-sm font-medium text-black bg-gradient-to-r from-[#FF9F7A] via-[#FFBFA5] to-[#FFD9B5] shadow-md hover:opacity-90 transition\"\r\n          >\r\n            FAQs\r\n          </Link>",
           "line": 31,
           "endLine": 36,
           "column": 10,
@@ -441,7 +457,7 @@
       "data": {
         "viaRoute": "/help",
         "trigger": {
-          "element": "<Link\r\n            to=\"/help\"\r\n            className=\"rounded-xl border border-[#ffffff33] bg-transparent px-4 py-2 text-sm font-medium text-white hover:border-white\"\r\n          >\r\n            FAQ\r\n          </Link>",
+          "element": "<Link\r\n            to=\"/help\"\r\n            className=\"hidden md:inline-flex items-center justify-center rounded-full px-5 py-2 text-sm font-medium text-black bg-gradient-to-r from-[#FF9F7A] via-[#FFBFA5] to-[#FFD9B5] shadow-md hover:opacity-90 transition\"\r\n          >\r\n            FAQs\r\n          </Link>",
           "line": 31,
           "endLine": 36,
           "column": 10,
@@ -521,7 +537,7 @@
       "data": {
         "viaRoute": "/help",
         "trigger": {
-          "element": "<Link\r\n            to=\"/help\"\r\n            className=\"rounded-xl border border-[#ffffff33] bg-transparent px-4 py-2 text-sm font-medium text-white hover:border-white\"\r\n          >\r\n            FAQ\r\n          </Link>",
+          "element": "<Link\r\n            to=\"/help\"\r\n            className=\"hidden md:inline-flex items-center justify-center rounded-full px-5 py-2 text-sm font-medium text-black bg-gradient-to-r from-[#FF9F7A] via-[#FFBFA5] to-[#FFD9B5] shadow-md hover:opacity-90 transition\"\r\n          >\r\n            FAQs\r\n          </Link>",
           "line": 31,
           "endLine": 36,
           "column": 10,
@@ -745,7 +761,7 @@
       "data": {
         "viaRoute": "/help",
         "trigger": {
-          "element": "<Link\r\n            to=\"/help\"\r\n            className=\"rounded-xl border border-[#ffffff33] bg-transparent px-4 py-2 text-sm font-medium text-white hover:border-white\"\r\n          >\r\n            FAQ\r\n          </Link>",
+          "element": "<Link\r\n            to=\"/help\"\r\n            className=\"hidden md:inline-flex items-center justify-center rounded-full px-5 py-2 text-sm font-medium text-black bg-gradient-to-r from-[#FF9F7A] via-[#FFBFA5] to-[#FFD9B5] shadow-md hover:opacity-90 transition\"\r\n          >\r\n            FAQs\r\n          </Link>",
           "line": 31,
           "endLine": 36,
           "column": 10,
@@ -841,7 +857,7 @@
       "data": {
         "viaRoute": "/help",
         "trigger": {
-          "element": "<Link\r\n            to=\"/help\"\r\n            className=\"rounded-xl border border-[#ffffff33] bg-transparent px-4 py-2 text-sm font-medium text-white hover:border-white\"\r\n          >\r\n            FAQ\r\n          </Link>",
+          "element": "<Link\r\n            to=\"/help\"\r\n            className=\"hidden md:inline-flex items-center justify-center rounded-full px-5 py-2 text-sm font-medium text-black bg-gradient-to-r from-[#FF9F7A] via-[#FFBFA5] to-[#FFD9B5] shadow-md hover:opacity-90 transition\"\r\n          >\r\n            FAQs\r\n          </Link>",
           "line": 31,
           "endLine": 36,
           "column": 10,
@@ -937,7 +953,7 @@
       "data": {
         "viaRoute": "/help",
         "trigger": {
-          "element": "<Link\r\n            to=\"/help\"\r\n            className=\"rounded-xl border border-[#ffffff33] bg-transparent px-4 py-2 text-sm font-medium text-white hover:border-white\"\r\n          >\r\n            FAQ\r\n          </Link>",
+          "element": "<Link\r\n            to=\"/help\"\r\n            className=\"hidden md:inline-flex items-center justify-center rounded-full px-5 py-2 text-sm font-medium text-black bg-gradient-to-r from-[#FF9F7A] via-[#FFBFA5] to-[#FFD9B5] shadow-md hover:opacity-90 transition\"\r\n          >\r\n            FAQs\r\n          </Link>",
           "line": 31,
           "endLine": 36,
           "column": 10,
@@ -1033,7 +1049,7 @@
       "data": {
         "viaRoute": "/help",
         "trigger": {
-          "element": "<Link\r\n            to=\"/help\"\r\n            className=\"rounded-xl border border-[#ffffff33] bg-transparent px-4 py-2 text-sm font-medium text-white hover:border-white\"\r\n          >\r\n            FAQ\r\n          </Link>",
+          "element": "<Link\r\n            to=\"/help\"\r\n            className=\"hidden md:inline-flex items-center justify-center rounded-full px-5 py-2 text-sm font-medium text-black bg-gradient-to-r from-[#FF9F7A] via-[#FFBFA5] to-[#FFD9B5] shadow-md hover:opacity-90 transition\"\r\n          >\r\n            FAQs\r\n          </Link>",
           "line": 31,
           "endLine": 36,
           "column": 10,
@@ -1129,7 +1145,7 @@
       "data": {
         "viaRoute": "/help",
         "trigger": {
-          "element": "<Link\r\n            to=\"/help\"\r\n            className=\"rounded-xl border border-[#ffffff33] bg-transparent px-4 py-2 text-sm font-medium text-white hover:border-white\"\r\n          >\r\n            FAQ\r\n          </Link>",
+          "element": "<Link\r\n            to=\"/help\"\r\n            className=\"hidden md:inline-flex items-center justify-center rounded-full px-5 py-2 text-sm font-medium text-black bg-gradient-to-r from-[#FF9F7A] via-[#FFBFA5] to-[#FFD9B5] shadow-md hover:opacity-90 transition\"\r\n          >\r\n            FAQs\r\n          </Link>",
           "line": 31,
           "endLine": 36,
           "column": 10,
@@ -1225,7 +1241,7 @@
       "data": {
         "viaRoute": "/help",
         "trigger": {
-          "element": "<Link\r\n            to=\"/help\"\r\n            className=\"rounded-xl border border-[#ffffff33] bg-transparent px-4 py-2 text-sm font-medium text-white hover:border-white\"\r\n          >\r\n            FAQ\r\n          </Link>",
+          "element": "<Link\r\n            to=\"/help\"\r\n            className=\"hidden md:inline-flex items-center justify-center rounded-full px-5 py-2 text-sm font-medium text-black bg-gradient-to-r from-[#FF9F7A] via-[#FFBFA5] to-[#FFD9B5] shadow-md hover:opacity-90 transition\"\r\n          >\r\n            FAQs\r\n          </Link>",
           "line": 31,
           "endLine": 36,
           "column": 10,
@@ -1321,7 +1337,7 @@
       "data": {
         "viaRoute": "/help",
         "trigger": {
-          "element": "<Link\r\n            to=\"/help\"\r\n            className=\"rounded-xl border border-[#ffffff33] bg-transparent px-4 py-2 text-sm font-medium text-white hover:border-white\"\r\n          >\r\n            FAQ\r\n          </Link>",
+          "element": "<Link\r\n            to=\"/help\"\r\n            className=\"hidden md:inline-flex items-center justify-center rounded-full px-5 py-2 text-sm font-medium text-black bg-gradient-to-r from-[#FF9F7A] via-[#FFBFA5] to-[#FFD9B5] shadow-md hover:opacity-90 transition\"\r\n          >\r\n            FAQs\r\n          </Link>",
           "line": 31,
           "endLine": 36,
           "column": 10,
@@ -1417,7 +1433,7 @@
       "data": {
         "viaRoute": "/help",
         "trigger": {
-          "element": "<Link\r\n            to=\"/help\"\r\n            className=\"rounded-xl border border-[#ffffff33] bg-transparent px-4 py-2 text-sm font-medium text-white hover:border-white\"\r\n          >\r\n            FAQ\r\n          </Link>",
+          "element": "<Link\r\n            to=\"/help\"\r\n            className=\"hidden md:inline-flex items-center justify-center rounded-full px-5 py-2 text-sm font-medium text-black bg-gradient-to-r from-[#FF9F7A] via-[#FFBFA5] to-[#FFD9B5] shadow-md hover:opacity-90 transition\"\r\n          >\r\n            FAQs\r\n          </Link>",
           "line": 31,
           "endLine": 36,
           "column": 10,
@@ -1513,7 +1529,7 @@
       "data": {
         "viaRoute": "/help",
         "trigger": {
-          "element": "<Link\r\n            to=\"/help\"\r\n            className=\"rounded-xl border border-[#ffffff33] bg-transparent px-4 py-2 text-sm font-medium text-white hover:border-white\"\r\n          >\r\n            FAQ\r\n          </Link>",
+          "element": "<Link\r\n            to=\"/help\"\r\n            className=\"hidden md:inline-flex items-center justify-center rounded-full px-5 py-2 text-sm font-medium text-black bg-gradient-to-r from-[#FF9F7A] via-[#FFBFA5] to-[#FFD9B5] shadow-md hover:opacity-90 transition\"\r\n          >\r\n            FAQs\r\n          </Link>",
           "line": 31,
           "endLine": 36,
           "column": 10,
@@ -1609,7 +1625,7 @@
       "data": {
         "viaRoute": "/help",
         "trigger": {
-          "element": "<Link\r\n            to=\"/help\"\r\n            className=\"rounded-xl border border-[#ffffff33] bg-transparent px-4 py-2 text-sm font-medium text-white hover:border-white\"\r\n          >\r\n            FAQ\r\n          </Link>",
+          "element": "<Link\r\n            to=\"/help\"\r\n            className=\"hidden md:inline-flex items-center justify-center rounded-full px-5 py-2 text-sm font-medium text-black bg-gradient-to-r from-[#FF9F7A] via-[#FFBFA5] to-[#FFD9B5] shadow-md hover:opacity-90 transition\"\r\n          >\r\n            FAQs\r\n          </Link>",
           "line": 31,
           "endLine": 36,
           "column": 10,
@@ -1705,7 +1721,7 @@
       "data": {
         "viaRoute": "/help",
         "trigger": {
-          "element": "<Link\r\n            to=\"/help\"\r\n            className=\"rounded-xl border border-[#ffffff33] bg-transparent px-4 py-2 text-sm font-medium text-white hover:border-white\"\r\n          >\r\n            FAQ\r\n          </Link>",
+          "element": "<Link\r\n            to=\"/help\"\r\n            className=\"hidden md:inline-flex items-center justify-center rounded-full px-5 py-2 text-sm font-medium text-black bg-gradient-to-r from-[#FF9F7A] via-[#FFBFA5] to-[#FFD9B5] shadow-md hover:opacity-90 transition\"\r\n          >\r\n            FAQs\r\n          </Link>",
           "line": 31,
           "endLine": 36,
           "column": 10,
@@ -1801,7 +1817,7 @@
       "data": {
         "viaRoute": "/help",
         "trigger": {
-          "element": "<Link\r\n            to=\"/help\"\r\n            className=\"rounded-xl border border-[#ffffff33] bg-transparent px-4 py-2 text-sm font-medium text-white hover:border-white\"\r\n          >\r\n            FAQ\r\n          </Link>",
+          "element": "<Link\r\n            to=\"/help\"\r\n            className=\"hidden md:inline-flex items-center justify-center rounded-full px-5 py-2 text-sm font-medium text-black bg-gradient-to-r from-[#FF9F7A] via-[#FFBFA5] to-[#FFD9B5] shadow-md hover:opacity-90 transition\"\r\n          >\r\n            FAQs\r\n          </Link>",
           "line": 31,
           "endLine": 36,
           "column": 10,
@@ -1897,7 +1913,7 @@
       "data": {
         "viaRoute": "/help",
         "trigger": {
-          "element": "<Link\r\n            to=\"/help\"\r\n            className=\"rounded-xl border border-[#ffffff33] bg-transparent px-4 py-2 text-sm font-medium text-white hover:border-white\"\r\n          >\r\n            FAQ\r\n          </Link>",
+          "element": "<Link\r\n            to=\"/help\"\r\n            className=\"hidden md:inline-flex items-center justify-center rounded-full px-5 py-2 text-sm font-medium text-black bg-gradient-to-r from-[#FF9F7A] via-[#FFBFA5] to-[#FFD9B5] shadow-md hover:opacity-90 transition\"\r\n          >\r\n            FAQs\r\n          </Link>",
           "line": 31,
           "endLine": 36,
           "column": 10,

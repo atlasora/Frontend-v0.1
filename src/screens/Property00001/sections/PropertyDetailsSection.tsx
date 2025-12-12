@@ -1,5 +1,6 @@
 import { ChevronUpIcon, InfoIcon } from "lucide-react";
-import React from "react";
+import React, { useMemo } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import {
   Avatar,
   AvatarFallback,
@@ -8,6 +9,7 @@ import {
 import { Button } from "../../../components/ui/button";
 import { Card, CardContent } from "../../../components/ui/card";
 import { Separator } from "../../../components/ui/separator";
+import { useBooking } from "../../../state/booking";
 
 const amenitiesLeft = [
   {
@@ -113,9 +115,51 @@ const priceBreakdown = [
 ];
 
 export const PropertyDetailsSection = (): JSX.Element => {
+  const navigate = useNavigate();
+  const { propertyId = "000001" } = useParams();
+  const { setDraft } = useBooking();
+
+  const bookingValues = useMemo(() => {
+    const nightlyPrice = 189;
+    const nights = 5;
+    const serviceFeePct = 0.05;
+    const subtotal = nightlyPrice * nights;
+    const serviceFee = Math.round(subtotal * serviceFeePct);
+    const total = subtotal + serviceFee;
+
+    return {
+      nightlyPrice,
+      nights,
+      serviceFeePct,
+      subtotal,
+      serviceFee,
+      total,
+    };
+  }, []);
+
+  const checkIn = "17/7/2025";
+  const checkOut = "20/7/2025";
+  const guests = 2;
+
+  const onReserve = () => {
+    setDraft({
+      propertyId,
+      checkIn,
+      checkOut,
+      guests,
+      nightlyPrice: bookingValues.nightlyPrice,
+      nights: bookingValues.nights,
+      subtotal: bookingValues.subtotal,
+      serviceFeePct: bookingValues.serviceFeePct,
+      serviceFee: bookingValues.serviceFee,
+      total: bookingValues.total,
+    });
+    navigate(`/checkout/${propertyId}`);
+  };
+
   return (
-    <section className="flex items-start gap-6 w-full">
-      <div className="flex flex-col max-w-[803px] w-full items-start gap-16">
+    <section className="w-full flex flex-col lg:flex-row items-start gap-10 lg:gap-16">
+      <div className="flex flex-col w-full lg:max-w-[900px] flex-1 items-start gap-16">
         <div className="flex flex-col items-start gap-8 w-full">
           <Card className="w-full border-[#ffffff33] bg-transparent">
             <CardContent className="flex items-center justify-between p-6">
@@ -548,123 +592,112 @@ export const PropertyDetailsSection = (): JSX.Element => {
         </div>
       </div>
 
-      <Card
-        className="flex flex-col w-[327
-px] items-start gap-4 pt-6 pb-5 px-5 bg-[#f0e9e6] rounded-lg"
-      >
-        <CardContent className="flex flex-col items-start gap-4 p-0 w-full">
-          <div className="inline-flex items-center gap-2">
-            <span className="[font-family:'Hauora-Medium',Helvetica] font-medium text-[#070a0d] text-[32px] tracking-[-1.28px] leading-8 whitespace-nowrap">
-              €189
-            </span>
-            <span className="[font-family:'Hauora-Medium',Helvetica] font-medium text-[#070a0d] text-sm tracking-[-0.14px] leading-[14px] whitespace-nowrap">
-              per night
-            </span>
-          </div>
-
-          <div className="flex items-start gap-4 w-full">
-            <div className="flex items-center justify-between p-3 flex-1 bg-white rounded-lg overflow-hidden">
-              <div className="inline-flex flex-col items-start gap-2">
-                <span className="[font-family:'Hauora-Medium',Helvetica] font-medium text-[#00000080] text-xs tracking-[0] leading-3 whitespace-nowrap">
-                  Check-in
-                </span>
-                <span className="[font-family:'Hauora-Medium',Helvetica] font-medium text-black text-base tracking-[0] leading-4 whitespace-nowrap">
-                  17/7/2025
-                </span>
-              </div>
-              <ChevronUpIcon className="w-5 h-5" />
-            </div>
-
-            <div className="flex items-center justify-between p-3 flex-1 bg-white rounded-lg overflow-hidden">
-              <div className="inline-flex flex-col items-start gap-2">
-                <span className="[font-family:'Hauora-Medium',Helvetica] font-medium text-[#00000080] text-xs tracking-[0] leading-3 whitespace-nowrap">
-                  Check-out
-                </span>
-                <span className="[font-family:'Hauora-Medium',Helvetica] font-medium text-black text-base tracking-[0] leading-4 whitespace-nowrap">
-                  20/7/2025
-                </span>
-              </div>
-              <ChevronUpIcon className="w-5 h-5" />
-            </div>
-          </div>
-
-          <div className="flex items-start justify-between p-4 w-full bg-white rounded-lg">
-            <div className="inline-flex flex-col items-start gap-2">
-              <span className="[font-family:'Hauora-Medium',Helvetica] font-medium text-[#00000080] text-xs tracking-[0] leading-3 whitespace-nowrap">
-                Guests
+      <div className="w-full lg:w-[360px] xl:w-[420px] flex-shrink-0 lg:pt-4 lg:sticky lg:top-28">
+        <Card className="flex flex-col items-start gap-4 pt-6 pb-5 px-5 w-full bg-[#0c1118] border border-white/10 rounded-2xl shadow-[0_12px_40px_rgba(0,0,0,0.4)]">
+          <CardContent className="flex flex-col items-start gap-4 p-0 w-full">
+            <div className="inline-flex items-center gap-2">
+              <span className="[font-family:'Hauora-Medium',Helvetica] font-medium text-white text-[32px] tracking-[-1.28px] leading-8 whitespace-nowrap">
+                €{bookingValues.nightlyPrice}
               </span>
-              <span className="[font-family:'Hauora-Medium',Helvetica] font-medium text-black text-base tracking-[0] leading-4 whitespace-nowrap">
-                2 guests
+              <span className="[font-family:'Hauora-Medium',Helvetica] font-medium text-white/70 text-sm tracking-[-0.14px] leading-[14px] whitespace-nowrap">
+                per night
               </span>
             </div>
 
-            <div className="relative w-6 h-6 bg-white rounded-xl border border-solid border-[#00000040]">
-              <img
-                className="absolute top-[50%] left-[calc(50%_-_6px)] w-3 h-px object-cover"
-                alt="Line"
-                src="https://c.animaapp.com/mi74tnpoEhVBYJ/img/line-1.svg"
-              />
-              <img
-                className="absolute top-[calc(50%_-_6px)] left-[50%] w-px h-3 object-cover"
-                alt="Line"
-                src="https://c.animaapp.com/mi74tnpoEhVBYJ/img/line-2.svg"
-              />
-            </div>
-          </div>
-
-          <Button className="h-12 w-full bg-[#06090c] hover:bg-[#06090c]/90 rounded-lg [font-family:'Hauora-Medium',Helvetica] font-medium text-pure-white text-base">
-            Reserve
-            <img
-              className="w-2.5 h-[10.62px] ml-2"
-              alt="Arrow"
-              src="https://c.animaapp.com/mi74tnpoEhVBYJ/img/group-1073714270-1.png"
-            />
-          </Button>
-
-          <p className="[font-family:'Hauora-Regular',Helvetica] font-normal text-[#070a0dbf] text-xs text-center tracking-[0] leading-[normal] w-full">
-            You won&apos;t be charged yet.
-          </p>
-
-          <div className="flex flex-col items-center gap-[13px] w-full">
-            <div className="flex items-end justify-between w-full">
-              <div className="flex flex-col items-start gap-4">
-                {priceBreakdown.map((item, index) => (
-                  <span
-                    key={index}
-                    className="[font-family:'Hauora-Regular',Helvetica] font-normal text-[#070a0d] text-sm tracking-[0] leading-[normal]"
-                  >
-                    {item.label}
+            <div className="flex items-start gap-3 w-full">
+              <div className="flex items-center justify-between p-3 flex-1 bg-white/5 border border-white/10 rounded-xl overflow-hidden">
+                <div className="inline-flex flex-col items-start gap-2">
+                  <span className="[font-family:'Hauora-Medium',Helvetica] font-medium text-white/60 text-xs tracking-[0] leading-3 whitespace-nowrap">
+                    Check-in
                   </span>
-                ))}
+                  <span className="[font-family:'Hauora-Medium',Helvetica] font-medium text-white text-base tracking-[0] leading-4 whitespace-nowrap">
+                    {checkIn}
+                  </span>
+                </div>
+                <ChevronUpIcon className="w-5 h-5 text-white/70" />
               </div>
 
-              <div className="flex flex-col items-end gap-4">
-                {priceBreakdown.map((item, index) => (
-                  <span
-                    key={index}
-                    className="[font-family:'Hauora-SemiBold',Helvetica] font-semibold text-[#070a0d] text-sm text-right tracking-[0] leading-[normal]"
-                  >
-                    {item.value}
+              <div className="flex items-center justify-between p-3 flex-1 bg-white/5 border border-white/10 rounded-xl overflow-hidden">
+                <div className="inline-flex flex-col items-start gap-2">
+                  <span className="[font-family:'Hauora-Medium',Helvetica] font-medium text-white/60 text-xs tracking-[0] leading-3 whitespace-nowrap">
+                    Check-out
                   </span>
-                ))}
+                  <span className="[font-family:'Hauora-Medium',Helvetica] font-medium text-white text-base tracking-[0] leading-4 whitespace-nowrap">
+                    {checkOut}
+                  </span>
+                </div>
+                <ChevronUpIcon className="w-5 h-5 text-white/70" />
               </div>
             </div>
 
-            <div className="flex items-center justify-center gap-2 p-3 w-full bg-[#ffffff80] rounded-lg">
-              <p className="flex-1 [font-family:'Hauora-Regular',Helvetica] font-normal text-xs text-center tracking-[0] leading-[normal]">
-                <span className="text-[#070a0d]">You save </span>
-                <span className="[font-family:'Hauora-Bold',Helvetica] font-bold text-[#070a0d]">
-                  €45
+          <div className="flex items-start justify-between p-4 w-full bg-white/5 border border-white/10 rounded-xl">
+              <div className="inline-flex flex-col items-start gap-2">
+                <span className="[font-family:'Hauora-Medium',Helvetica] font-medium text-white/60 text-xs tracking-[0] leading-3 whitespace-nowrap">
+                  Guests
                 </span>
-                <span className="text-[#070a0d]">
-                  {" "}
-                  on your booking with AtlasOra compared to competitors1.
+                <span className="[font-family:'Hauora-Medium',Helvetica] font-medium text-white text-base tracking-[0] leading-4 whitespace-nowrap">
+                {guests} guests
                 </span>
-              </p>
+              </div>
+
+              <div className="relative w-6 h-6 bg-white/10 rounded-xl border border-white/20">
+                <img
+                  className="absolute top-[50%] left-[calc(50%_-_6px)] w-3 h-px object-cover"
+                  alt="Line"
+                  src="https://c.animaapp.com/mi74tnpoEhVBYJ/img/line-1.svg"
+                />
+                <img
+                  className="absolute top-[calc(50%_-_6px)] left-[50%] w-px h-3 object-cover"
+                  alt="Line"
+                  src="https://c.animaapp.com/mi74tnpoEhVBYJ/img/line-2.svg"
+                />
+              </div>
             </div>
-          </div>
-        </CardContent>
-      </Card>
+
+            <Button
+              onClick={onReserve}
+              className="h-12 w-full bg-gradient-to-r from-[#FF9F7A] via-[#FFBFA5] to-[#FFD9B5] hover:opacity-90 text-black rounded-xl [font-family:'Hauora-Medium',Helvetica] font-medium text-base shadow-md"
+            >
+              Reserve
+              <img
+                className="w-2.5 h-[10.62px] ml-2"
+                alt="Arrow"
+                src="https://c.animaapp.com/mi74tnpoEhVBYJ/img/group-1073714270-1.png"
+              />
+            </Button>
+
+            <p className="[font-family:'Hauora-Regular',Helvetica] font-normal text-white/60 text-xs text-center tracking-[0] leading-[normal] w-full">
+              You won&apos;t be charged yet.
+            </p>
+
+            <div className="flex flex-col items-center gap-4 w-full">
+              <div className="flex items-end justify-between w-full">
+                <div className="flex flex-col items-start gap-3">
+                  {priceBreakdown.map((item, index) => (
+                    <span
+                      key={index}
+                      className="[font-family:'Hauora-Regular',Helvetica] font-normal text-white/80 text-sm tracking-[0] leading-[normal]"
+                    >
+                      {item.label}
+                    </span>
+                  ))}
+                </div>
+
+                <div className="flex flex-col items-end gap-3">
+                  {priceBreakdown.map((item, index) => (
+                    <span
+                      key={index}
+                      className="[font-family:'Hauora-SemiBold',Helvetica] font-semibold text-white text-sm text-right tracking-[0] leading-[normal]"
+                    >
+                      {item.value}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
     </section>
   );
 };
