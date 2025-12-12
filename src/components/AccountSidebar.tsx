@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useAuth0 } from "@auth0/auth0-react";
+import { ChevronDown, ChevronUp } from "lucide-react";
 
 type AccountSidebarProps = {
   isOpen: boolean;
@@ -10,8 +12,15 @@ export const AccountSidebar: React.FC<AccountSidebarProps> = ({
   isOpen,
   onClose,
 }) => {
+  const { logout } = useAuth0();
   const [isGuestOpen, setIsGuestOpen] = useState(true);
   const [isHostOpen, setIsHostOpen] = useState(false);
+  const [isAccountSettingsOpen, setIsAccountSettingsOpen] = useState(false);
+
+  const handleLogout = () => {
+    logout({ logoutParams: { returnTo: window.location.origin } });
+    onClose();
+  };
 
   if (!isOpen) {
     return null;
@@ -49,10 +58,14 @@ export const AccountSidebar: React.FC<AccountSidebarProps> = ({
               <button
                 type="button"
                 onClick={() => setIsGuestOpen((v) => !v)}
-                className="w-full flex items-center justify-between px-4 py-3 text-left text-white font-medium"
+                className="w-full flex items-center justify-between px-4 py-3 text-left text-white font-medium hover:bg-white/5 transition rounded-t-2xl"
               >
                 <span>Guest</span>
-                <span className="text-white/60">{isGuestOpen ? "–" : "+"}</span>
+                {isGuestOpen ? (
+                  <ChevronUp className="w-4 h-4 text-white/60" />
+                ) : (
+                  <ChevronDown className="w-4 h-4 text-white/60" />
+                )}
               </button>
               {isGuestOpen && (
                 <div className="flex flex-col px-4 pb-4 gap-3 text-white/90">
@@ -86,10 +99,14 @@ export const AccountSidebar: React.FC<AccountSidebarProps> = ({
               <button
                 type="button"
                 onClick={() => setIsHostOpen((v) => !v)}
-                className="w-full flex items-center justify-between px-4 py-3 text-left text-white font-medium"
+                className="w-full flex items-center justify-between px-4 py-3 text-left text-white font-medium hover:bg-white/5 transition rounded-t-2xl"
               >
                 <span>Host</span>
-                <span className="text-white/60">{isHostOpen ? "–" : "+"}</span>
+                {isHostOpen ? (
+                  <ChevronUp className="w-4 h-4 text-white/60" />
+                ) : (
+                  <ChevronDown className="w-4 h-4 text-white/60" />
+                )}
               </button>
               {isHostOpen && (
                 <div className="flex flex-col px-4 pb-4 gap-3 text-white/90">
@@ -127,18 +144,36 @@ export const AccountSidebar: React.FC<AccountSidebarProps> = ({
 
             {/* Account Settings */}
             <div className="rounded-2xl border border-white/10 bg-white/5">
-              <div className="w-full flex items-center justify-between px-4 py-3 text-left text-white font-medium">
+              <button
+                type="button"
+                onClick={() => setIsAccountSettingsOpen((v) => !v)}
+                className="w-full flex items-center justify-between px-4 py-3 text-left text-white font-medium hover:bg-white/5 transition rounded-t-2xl"
+              >
                 <span>Account Settings</span>
-              </div>
-              <div className="flex flex-col px-4 pb-4 gap-3 text-white/90">
-                <Link
-                  to="/account/settings"
-                  onClick={onClose}
-                  className="flex justify-between items-center hover:text-[#FFA25B] transition"
-                >
-                  Account Settings <span>›</span>
-                </Link>
-              </div>
+                {isAccountSettingsOpen ? (
+                  <ChevronUp className="w-4 h-4 text-white/60" />
+                ) : (
+                  <ChevronDown className="w-4 h-4 text-white/60" />
+                )}
+              </button>
+              {isAccountSettingsOpen && (
+                <div className="flex flex-col px-4 pb-4 gap-3 text-white/90">
+                  <Link
+                    to="/account/settings"
+                    onClick={onClose}
+                    className="flex justify-between items-center hover:text-[#FFA25B] transition"
+                  >
+                    Account Settings <span>›</span>
+                  </Link>
+                  <button
+                    type="button"
+                    onClick={handleLogout}
+                    className="flex justify-between items-center hover:text-[#FFA25B] transition text-left w-full"
+                  >
+                    Log out <span>›</span>
+                  </button>
+                </div>
+              )}
             </div>
           </nav>
         </div>

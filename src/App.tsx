@@ -25,6 +25,9 @@ import Checkout from "./screens/Checkout/Checkout";
 import Payment from "./screens/Checkout/Payment";
 import BookingConfirmed from "./screens/Checkout/BookingConfirmed";
 import Login from "./screens/Auth/Login";
+import Profile from "./screens/Account/Profile";
+import Bookings from "./screens/Account/Bookings";
+import Settings from "./screens/Account/Settings";
 
 export const App = () => {
   return (
@@ -58,6 +61,10 @@ export const App = () => {
         <Route path="/checkout/:propertyId/payment" element={<Payment />} />
         <Route path="/booking/confirmed" element={<BookingConfirmed />} />
         <Route path="/login" element={<Login />} />
+        {/* Account pages */}
+        <Route path="/account/profile" element={<Profile />} />
+        <Route path="/account/bookings" element={<Bookings />} />
+        <Route path="/account/settings" element={<Settings />} />
         <Route path="*" element={<Navigate to="/property/000001" replace />} />
       </Routes>
     </BrowserRouter>
