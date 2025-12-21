@@ -29,3 +29,16 @@ If you are satisfied with the result, you can finally build the project for rele
 ```
 npm run build
 ```
+
+## API
+
+### GET /api/status
+
+Returns the API status.
+
+**Response:**
+```json
+{
+  "status": "ok"
+}
+```
