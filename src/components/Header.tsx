@@ -24,7 +24,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSidebar }) => {
           alt="Logo"
           src="https://c.animaapp.com/mir8wa3wzbI6XX/img/logo-1.svg"
         />
-        <div className="flex-1 flex justify-center px-8">
+        <div className="hidden md:flex flex-1 justify-center px-8">
           <SearchBar onSubmit={handleSearchSubmit} />
         </div>
         <div className="flex items-center gap-4">

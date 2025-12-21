@@ -31,8 +31,9 @@ import Settings from "./screens/Account/Settings";
 
 export const App = () => {
   return (
-    <BrowserRouter>
-      <Routes>
+    <div className="relative w-full max-w-full overflow-x-hidden">
+      <BrowserRouter>
+        <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/listings" element={<Listings />} />
@@ -66,8 +67,9 @@ export const App = () => {
         <Route path="/account/bookings" element={<Bookings />} />
         <Route path="/account/settings" element={<Settings />} />
         <Route path="*" element={<Navigate to="/property/000001" replace />} />
-      </Routes>
-    </BrowserRouter>
+        </Routes>
+      </BrowserRouter>
+    </div>
   );
 };
 

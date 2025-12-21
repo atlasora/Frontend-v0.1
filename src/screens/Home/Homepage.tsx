@@ -3,7 +3,6 @@ import { FeaturedListingsSection } from "./sections/FeaturedListingsSection";
 import { FooterSection } from "./sections/FooterSection";
 import { HeroSection } from "./sections/HeroSection";
 import { HostRewardSection } from "./sections/HostRewardSection";
-import { NotJustAnotherHeading } from "./sections/NotJustAnotherHeading";
 import { RealHostsSection } from "./sections/RealHostsSection";
 import { StatisticsSection } from "./sections/StatisticsSection";
 import { TestimonialSection } from "./sections/TestimonialSection";
@@ -17,7 +16,6 @@ export const Homepage = (): JSX.Element => {
     >
       <HeroSection />
       <FeaturedListingsSection />
-      <NotJustAnotherHeading />
       <WhyChooseUsSection />
       <HostRewardSection />
       <TestimonialSection />

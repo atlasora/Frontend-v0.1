@@ -5,7 +5,6 @@ import { FeaturedListingsSection } from "../screens/Home/sections/FeaturedListin
 import { FooterSection } from "../screens/Home/sections/FooterSection";
 import { HeroSection } from "../screens/Home/sections/HeroSection";
 // import { HostRewardSection } from "../screens/Home/sections/HostRewardSection";
-import { NotJustAnotherHeading } from "../screens/Home/sections/NotJustAnotherHeading";
 import { RealHostsSection } from "../screens/Home/sections/RealHostsSection";
 import { StatisticsSection } from "../screens/Home/sections/StatisticsSection";
 import { TestimonialSection } from "../screens/Home/sections/TestimonialSection";
@@ -14,7 +13,7 @@ import { WhyChooseUsSection } from "../screens/Home/sections/WhyChooseUsSection"
 export const LandingPage = (): JSX.Element => {
   return (
     <main
-      className="flex flex-col w-full items-start bg-[#06090c]"
+      className="relative w-full max-w-full overflow-x-hidden bg-[#06090c] flex flex-col items-start min-h-screen"
       data-model-id="517:949"
     >
       <HeroSection />
@@ -24,7 +23,6 @@ export const LandingPage = (): JSX.Element => {
         </div>
       </section>
       <FeaturedListingsSection />
-      <NotJustAnotherHeading />
       <div className="w-full flex justify-center mt-20">
         <div className="w-full max-w-6xl px-4">
           <AdvanceCalculator />

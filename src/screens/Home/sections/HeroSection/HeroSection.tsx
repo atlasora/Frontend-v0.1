@@ -48,8 +48,8 @@ export const HeroSection = (): JSX.Element => {
   }, []);
 
   return (
-    <section className="relative w-full h-[789px]">
-      <div className="relative w-full h-full">
+    <section className="relative w-full h-auto min-h-[500px] sm:h-[789px] overflow-hidden bg-[#06090c]">
+      <div className="relative w-full h-full min-h-[500px] sm:min-h-[789px]">
         <video
           ref={videoRef}
           autoPlay
@@ -64,17 +64,17 @@ export const HeroSection = (): JSX.Element => {
         <div className="absolute inset-0 bg-black/30 pointer-events-none" />
 
         {/* Content container */}
-        <div className="relative h-full flex flex-col max-w-[1395px] mx-auto">
-          <header className="pt-[51px] px-8 mb-10 md:mb-14 flex items-center justify-between w-full">
+        <div className="relative h-full flex flex-col w-full sm:max-w-[1395px] mx-auto">
+          <header className="pt-6 sm:pt-[51px] px-4 sm:px-8 mb-6 sm:mb-10 md:mb-14 flex items-center justify-between w-full max-w-full relative z-10">
             <img
-              className="w-[122.1px] h-[28.08px] translate-y-[-1rem] animate-fade-in opacity-0"
+              className="w-[100px] sm:w-[122.1px] h-auto sm:h-[28.08px] translate-y-[-1rem] animate-fade-in opacity-0 flex-shrink-0"
               alt="Logo"
               src="https://c.animaapp.com/mir8wa3wzbI6XX/img/logo-1.svg"
             />
-            <div className="flex-1 flex justify-center px-8">
+            <div className="hidden md:flex md:flex-1 md:justify-center md:px-8">
               <SearchBar locationLabel="Barcelona" onSubmit={handleSearchSubmit} />
             </div>
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-2 sm:gap-4 flex-shrink-0">
               <button
                 type="button"
                 onClick={() => navigate("/help")}
@@ -111,22 +111,28 @@ export const HeroSection = (): JSX.Element => {
             </div>
           </header>
 
-          <div className="flex-1 flex flex-col justify-center px-14 pb-[157px]">
-            <div className="max-w-5xl translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:200ms]">
-              <h1 className="text-4xl md:text-6xl font-light tracking-tight leading-tight text-white">
-                Earn more from your place. Instant payouts upon check-in.
+          <div className="flex-1 flex flex-col justify-center py-8 sm:py-24 sm:pb-[157px] px-4 sm:px-14">
+            <div className="w-full sm:max-w-5xl translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:200ms]">
+              <h1 className="text-3xl sm:text-5xl font-light tracking-tight leading-tight text-white text-center sm:text-left">
+                Earn more from your place.
               </h1>
-              <p className="mt-6 text-lg md:text-2xl font-light leading-relaxed text-white/90 max-w-3xl">
+              <p className="mt-3 sm:mt-6 text-base sm:text-lg opacity-80 text-white text-center sm:text-left">
+                Instant payouts upon check-in.
+              </p>
+              <p className="mt-3 sm:mt-6 text-base sm:text-lg font-light leading-relaxed text-white/90 w-full sm:max-w-3xl text-center sm:text-left">
                 Launching in Spain in Q1 2026.
               </p>
             </div>
 
-            <div className="mt-[118px] flex flex-col gap-4 translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:600ms]">
+            <div className="mt-6 sm:mt-8 flex flex-col items-center sm:items-start gap-4 translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:600ms]">
               <Button
                 onClick={() => navigate("/host")}
                 className="
-                  w-[352px]
-                  px-10 py-4 rounded-full text-black font-semibold 
+                  w-full sm:w-auto
+                  h-12 sm:h-14
+                  px-6 sm:px-10
+                  py-4 sm:py-4
+                  rounded-full text-black font-semibold 
                   bg-gradient-to-r from-[#FF9F7A] via-[#FFBFA5] to-[#FFD9B5] 
                   hover:opacity-90 transition-all duration-300
                 "
@@ -134,28 +140,16 @@ export const HeroSection = (): JSX.Element => {
                 List your property
               </Button>
 
-              <p className="w-[352px] text-[14px] text-white text-opacity-80 text-center leading-[20px] mt-1">
+              <p className="mt-3 text-sm opacity-70 text-white text-center sm:text-left">
                 Takes 2 minutes · No setup fee · Cancel anytime.
               </p>
 
               {/* Host benefits – premium AO logo version */}
               <div
-                style={{
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "flex-start",
-                  gap: "6rem",
-                  marginTop: "70px",
-                  marginBottom: "70px",
-                  color: "white",
-                  fontSize: "20px",
-                  fontWeight: 300,
-                  textAlign: "center",
-                  flexWrap: "wrap",
-                }}
+                className="hidden sm:flex justify-center items-start gap-6 md:gap-24 mt-12 sm:mt-[70px] mb-12 sm:mb-[70px] text-white text-base sm:text-xl font-light text-center flex-wrap"
               >
                 {/* Benefit 1 */}
-                <div style={{ maxWidth: "260px" }}>
+                <div className="max-w-[260px]">
                   <img
                     src="/images/logo.png"
                     alt="AtlasOra logo"
@@ -165,7 +159,7 @@ export const HeroSection = (): JSX.Element => {
                 </div>
 
                 {/* Benefit 2 */}
-                <div style={{ maxWidth: "260px" }}>
+                <div className="max-w-[260px]">
                   <img
                     src="/images/logo.png"
                     alt="AtlasOra logo"
@@ -175,7 +169,7 @@ export const HeroSection = (): JSX.Element => {
                 </div>
 
                 {/* Benefit 3 */}
-                <div style={{ maxWidth: "260px" }}>
+                <div className="max-w-[260px]">
                   <img
                     src="/images/logo.png"
                     alt="AtlasOra logo"
