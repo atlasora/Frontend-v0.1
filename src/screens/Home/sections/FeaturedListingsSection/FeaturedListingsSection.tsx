@@ -2,6 +2,7 @@ import React from "react";
 import HoverVideo from "../../../../components/HoverVideo";
 import { Badge } from "../../../../components/ui/badge";
 import { Card, CardContent } from "../../../../components/ui/card";
+import FeaturedListingsCarousel from "../../../../components/FeaturedListingsCarousel";
 
 const listingsData = [
   {
@@ -42,7 +43,22 @@ export const FeaturedListingsSection = (): JSX.Element => {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[27px]">
+        {/* Mobile Carousel */}
+        <div className="md:hidden">
+          <FeaturedListingsCarousel
+            listings={listingsData.map((listing) => ({
+              id: String(listing.id),
+              title: listing.title,
+              subtitle: listing.description,
+              price: listing.price,
+              badge: listing.verified ? "Verified stay" : undefined,
+            }))}
+            autoAdvanceMs={10000}
+          />
+        </div>
+
+        {/* Desktop Grid */}
+        <div className="hidden md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[27px]">
           {listingsData.map((listing, index) => {
             const cardContent = (
               <Card
