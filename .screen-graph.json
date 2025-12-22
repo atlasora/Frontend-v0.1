@@ -229,15 +229,15 @@
       }
     },
     {
-      "id": "src\\screens\\Home\\sections\\HeroSection\\HeroSection.tsx:126:31-to-src\\screens\\host\\HostStart.tsx",
+      "id": "src\\screens\\Home\\sections\\HeroSection\\HeroSection.tsx:129:31-to-src\\screens\\host\\HostStart.tsx",
       "source": "src\\components\\LandingPage.tsx",
       "target": "src\\screens\\host\\HostStart.tsx",
       "data": {
         "viaRoute": "/host",
         "trigger": {
           "element": "navigate(\"/host\")",
-          "line": 126,
-          "endLine": 126,
+          "line": 129,
+          "endLine": 129,
           "column": 31,
           "endColumn": 48,
           "sourceFile": "src\\screens\\Home\\sections\\HeroSection\\HeroSection.tsx"

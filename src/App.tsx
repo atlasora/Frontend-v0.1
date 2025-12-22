@@ -28,10 +28,12 @@ import Login from "./screens/Auth/Login";
 import Profile from "./screens/Account/Profile";
 import Bookings from "./screens/Account/Bookings";
 import Settings from "./screens/Account/Settings";
+import MobileCTA from "./components/MobileCTA";
+import MobilePulse from "./components/MobilePulse";
 
 export const App = () => {
   return (
-    <div className="relative w-full max-w-full overflow-x-hidden">
+    <div className="relative w-full max-w-full overflow-x-hidden pb-32 md:pb-0">
       <BrowserRouter>
         <Routes>
         <Route path="/" element={<LandingPage />} />
@@ -69,6 +71,12 @@ export const App = () => {
         <Route path="*" element={<Navigate to="/property/000001" replace />} />
         </Routes>
       </BrowserRouter>
+
+      {/* Mobile Bottom CTA */}
+      <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden">
+        <MobilePulse />
+        <MobileCTA />
+      </div>
     </div>
   );
 };
