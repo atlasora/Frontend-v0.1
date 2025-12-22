@@ -9,6 +9,7 @@ import { RealHostsSection } from "../screens/Home/sections/RealHostsSection";
 import { StatisticsSection } from "../screens/Home/sections/StatisticsSection";
 import { TestimonialSection } from "../screens/Home/sections/TestimonialSection";
 import { WhyChooseUsSection } from "../screens/Home/sections/WhyChooseUsSection";
+import WhyAOBetter from "./WhyAOBetter";
 
 export const LandingPage = (): JSX.Element => {
   return (
@@ -17,6 +18,7 @@ export const LandingPage = (): JSX.Element => {
       data-model-id="517:949"
     >
       <HeroSection />
+      <WhyAOBetter />
       <section className="w-full px-6 mt-16">
         <div className="max-w-6xl mx-auto">
           <AtlasOraVsAirbnbCalculator />

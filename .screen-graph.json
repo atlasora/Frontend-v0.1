@@ -373,15 +373,15 @@
       }
     },
     {
-      "id": "src\\screens\\Home\\sections\\FeaturedListingsSection\\FeaturedListingsSection.tsx:88:14-to-src\\screens\\Property00001\\Property000001.tsx",
+      "id": "src\\screens\\Home\\sections\\FeaturedListingsSection\\FeaturedListingsSection.tsx:104:14-to-src\\screens\\Property00001\\Property000001.tsx",
       "source": "src\\components\\LandingPage.tsx",
       "target": "src\\screens\\Property00001\\Property000001.tsx",
       "data": {
         "viaRoute": "/property/000001",
         "trigger": {
           "element": "<a key={listing.id} href=\"/property/000001\" className=\"block\">\n                {cardContent}\n              </a>",
-          "line": 88,
-          "endLine": 90,
+          "line": 104,
+          "endLine": 106,
           "column": 14,
           "endColumn": 18,
           "sourceFile": "src\\screens\\Home\\sections\\FeaturedListingsSection\\FeaturedListingsSection.tsx"
