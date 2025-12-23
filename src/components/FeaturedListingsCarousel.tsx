@@ -29,13 +29,15 @@ export default function FeaturedListingsCarousel({
     [activeIndex, listings.length]
   );
 
-  // Scroll to index
+  // Scroll to index (horizontal only, avoid page scroll jumps)
   const scrollToIndex = (index: number) => {
     const el = scrollerRef.current;
     if (!el) return;
     const child = el.children.item(index) as HTMLElement | null;
     if (!child) return;
-    child.scrollIntoView({ behavior: "smooth", inline: "start", block: "nearest" });
+
+    const left = child.offsetLeft;
+    el.scrollTo({ left, behavior: "smooth" });
   };
 
   // Track active slide on scroll
@@ -224,4 +226,5 @@ export default function FeaturedListingsCarousel({
     </div>
   );
 }
+
 
