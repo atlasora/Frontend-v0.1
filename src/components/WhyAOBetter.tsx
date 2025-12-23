@@ -1,5 +1,4 @@
 import React from "react";
-import { ArrowRight } from "lucide-react";
 import AOIcon from "./AOIcon";
 
 const WhyAOBetter: React.FC = () => {
@@ -75,8 +74,8 @@ const WhyAOBetter: React.FC = () => {
   return (
     <section id="why-better" className="w-full py-20 px-6 bg-[#05070B]">
       <div className="max-w-6xl mx-auto">
-        {/* Header - visible on all breakpoints, compact on mobile */}
-        <div className="text-center mb-8 lg:mb-12">
+        {/* Header - desktop/tablet only */}
+        <div className="hidden lg:block text-center mb-12">
           <h2 className="bg-gradient-to-r from-[#ffb28a] via-[#ffcf99] to-[#ffd9b3] bg-clip-text text-transparent text-3xl lg:text-5xl font-bold mb-2 lg:mb-3">
             Why AO is better
           </h2>
@@ -160,7 +159,6 @@ const WhyAOBetter: React.FC = () => {
                   {feature.description}
                 </p>
               </div>
-              <ArrowRight className="w-5 h-5 text-neutral-400 flex-shrink-0 mt-1" />
             </div>
           ))}
         </div>
