@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="Calendar-3--Streamline-Ultimate" height="24" width="24">
+  <desc>
+    Calendar 3 Streamline Icon: https://streamlinehq.com
+  </desc>
+  <defs></defs>
+  <path d="M1.5 2.501h21s1 0 1 1v19s0 1 -1 1h-21s-1 0 -1 -1v-19s0 -1 1 -1" fill="#dff9ff" stroke-width="1"></path>
+  <path d="M0.5 7.5H12v4H0.5Z" fill="#ffffff" stroke-width="1"></path>
+  <path d="M23.5 4.5H0.5v-1a1 1 0 0 1 1 -1h21a1 1 0 0 1 1 1Z" fill="#ffffff" stroke-width="1"></path>
+  <path d="m5.5 0.501 0 5" fill="none" stroke="#00303e" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"></path>
+  <path d="m18.5 0.501 0 5" fill="none" stroke="#00303e" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"></path>
+  <path d="M18 7.5h5.5v4.001H18Z" fill="#ffda9f" stroke-width="1"></path>
+  <path d="M12 7.5h6v4.001h-6Z" fill="#ffda9f" stroke-width="1"></path>
+  <path d="M12 11.501h6v4h-6Z" fill="#ffda9f" stroke-width="1"></path>
+  <path d="M18 11.501h5.5v4H18Z" fill="#ffda9f" stroke-width="1"></path>
+  <path d="M6 11.501h6v4H6Z" fill="#ffda9f" stroke-width="1"></path>
+  <path d="M12 15.501h6v4h-6Z" fill="#ffda9f" stroke-width="1"></path>
+  <path d="M6 15.501h6v4H6Z" fill="#ffda9f" stroke-width="1"></path>
+  <path d="M18 23.5h4.5a1 1 0 0 0 1 -1v-3H18Z" fill="#ffda9f" stroke-width="1"></path>
+  <path d="M12 19.501h6V23.5h-6Z" fill="#ffda9f" stroke-width="1"></path>
+  <path d="M6 19.501h6V23.5H6Z" fill="#ffda9f" stroke-width="1"></path>
+  <path d="M18 15.501h5.5v4H18Z" fill="#ffda9f" stroke-width="1"></path>
+  <path d="M0.5 15.501H6v4H0.5Z" fill="#ffda9f" stroke-width="1"></path>
+  <path d="M0.5 11.501H6v4H0.5Z" fill="#ffda9f" stroke-width="1"></path>
+  <path d="M0.5 19.5v3a1 1 0 0 0 1 1H6v-4Z" fill="#ffda9f" stroke-width="1"></path>
+  <path d="m12 7.501 0 16" fill="none" stroke="#00303e" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"></path>
+  <path d="m6 7.501 0 16" fill="none" stroke="#00303e" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"></path>
+  <path d="m18 7.501 0 16" fill="none" stroke="#00303e" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"></path>
+  <path d="m0.5 15.501 23 0" fill="none" stroke="#00303e" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"></path>
+  <path d="m0.5 11.501 23 0" fill="none" stroke="#00303e" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"></path>
+  <path d="m0.5 19.501 23 0" fill="none" stroke="#00303e" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"></path>
+  <path d="M1.5 2.501h21s1 0 1 1v19s0 1 -1 1h-21s-1 0 -1 -1v-19s0 -1 1 -1" fill="none" stroke="#00303e" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"></path>
+  <path d="m0.5 7.501 23 0" fill="none" stroke="#00303e" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"></path>
+</svg>
